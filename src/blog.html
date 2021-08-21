@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('blocks/_head.html', {
+"title": "Блог",
+})
+
+<body>
+
+    @@include('blocks/_header.html')
+
+
+    @@include('blocks/_first-screen.html', {
+    "title": "Блог",
+    })
+
+
+    @@include('blocks/_info-nav.html', {
+    "title": "Блог",
+    })
+
+
+    <main class="main main--blog">
+        <div class="container">
+            <div class="main__inner">
+
+                <div class="main--left">
+                    <div class="posts">
+
+                        <div class="post">
+                            <a href="single-post.html" class="post__img">
+                                <img src="img/post.jpg" alt="">
+                            </a>
+                            <div class="post__info">
+                                <time class="post__date" datetime="2020-03-12">March 12, 2020</time>
+                                <div class="post__author">by Ann Summers</div>
+                                <div class="post__profession">Inrerior</div>
+                            </div>
+                            <h4 class="post__title">
+                                <a href="single-post.html">
+                                    Listicle actually selvage activated charcoal for the drinking vinegar
+                                </a>
+                            </h4>
+                            <p class="post__text">Everyday carry actually neutra authentic kogi shabby
+                                chic migas small
+                                batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v
+                                irony.
+                                Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard
+                                thundercats
+                                coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb
+                                farm-to-table
+                            </p>
+                        </div>
+
+                        <div class="post">
+                            <div class="post__info">
+                                <time class="post__date" datetime="2020-03-12">March 12, 2020</time>
+                                <div class="post__author">by Ann Summers</div>
+                                <div class="post__profession">Inrerior</div>
+                            </div>
+                            <h4 class="post__title">
+                                <a href="single-post.html">
+                                    Listicle actually selvage activated charcoal for the drinking vinegar
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div class="post">
+                            <a href="single-post.html" class="post__img">
+                                <img src="img/post.jpg" alt="">
+                            </a>
+                            <div class="post__info">
+                                <time class="post__date" datetime="2020-03-12">March 12, 2020</time>
+                                <div class="post__author">by Ann Summers</div>
+                                <div class="post__profession">Inrerior</div>
+                            </div>
+                            <h4 class="post__title">
+                                <a href="single-post.html">
+                                    Listicle actually selvage activated charcoal for the drinking vinegar
+                                </a>
+                            </h4>
+                            <p class="post__text">Everyday carry actually neutra authentic kogi shabby
+                                chic migas small
+                                batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v
+                                irony.
+                                Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard
+                                thundercats
+                                coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb
+                                farm-to-table
+                            </p>
+                        </div>
+
+                    </div>
+
+                    @@include('blocks/_pagination.html')
+                </div>
+
+                <div class="main--right">
+                    @@include('blocks/_sidebar.html')
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+
+    @@include('blocks/_footer.html')
+
+
+    @@include('blocks/_js.html')
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('blocks/_head.html', {
+"title": "О нас",
+})
+
+<body>
+
+    @@include('blocks/_header.html')
+
+
+    @@include('blocks/_first-screen.html', {
+    "title": "О нас",
+    })
+
+
+    @@include('blocks/_info-nav.html', {
+    "title": "О нас",
+    })
+
+
+    @@include('blocks/_about-block.html')
+
+
+    @@include('blocks/_gallery-block.html')
+
+
+    @@include('blocks/_info-block.html')
+
+    <!-- philosofy
+    ======================================================= -->
+    <section class="philosofy">
+        <div class="container">
+            <div class="philosofy__inner">
+                <div class="philosofy__img wrapper">
+                    <img src="./img/philosofy__img.jpg" alt="">
+                </div>
+                <div class="philosofy__content">
+                    <h2 class="philosofy__content-title">НАША ФИЛОСОФИЯ
+                    </h2>
+                    <p class="philosofy__content-text">Наша философия довольно проста: мы не воспринимаем жизнь или моду
+                        слишком серьезно. Мы никогда не подведем вас, начиная от платьев для свидания и заканчивая
+                        модным аксессуаром, когда у вас был плохой день.</p>
+                </div>
+
+                <div class="philosofy__patterns">
+                    <div class="philosofy__pattern">
+                        <img src="./img/pattern.png" alt="">
+                    </div>
+                    <div class="philosofy__pattern">
+                        <img src="./img/pattern.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- philosofy end -->
+
+
+    @@include('blocks/_quote-block.html')
+
+
+    <!-- companies
+    ======================================================= -->
+    <section class="companies">
+        <ul class='companies__list'>
+            <li class="companies__item">
+                <a href="#" class="companies__item-link">
+                    <img src="./img/companies__item-1.png" alt="">
+                </a>
+            </li>
+            <li class="companies__item">
+                <a href="#" class="companies__item-link">
+                    <img src="./img/companies__item-1.png" alt="">
+                </a>
+            </li>
+            <li class="companies__item">
+                <a href="#" class="companies__item-link">
+                    <img src="./img/companies__item-1.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </section><!-- companies end -->
+
+
+    @@include('blocks/_footer.html')
+
+
+    @@include('blocks/_js.html')
+
+</body>
+
+</html>
