@@ -3245,9 +3245,9 @@ textarea {
 }
 
 .sidebar .search__btn path {
-  -webkit-transition: cofilllor 0.2s;
-  -o-transition: cofilllor 0.2s;
-  transition: cofilllor 0.2s;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
   fill: #787878;
 }
 
