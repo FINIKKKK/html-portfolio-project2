@@ -129,11 +129,12 @@
             }
         }
     }
-    
+
     .menu {
         position: relative;
     }
     .menu__list {
+        pointer-events: none;
         z-index: 1000;
         position: absolute;
         right: 0;
@@ -142,7 +143,6 @@
         padding: 0;
         overflow: auto;
         overflow-x: hidden;
-        pointer-events: auto;
         &::before {
             content: "";
             position: fixed;
@@ -183,6 +183,7 @@
     }
     &.mobile {
         .menu__list {
+            pointer-events: auto;
             &::before {
                 transform: translatex(0);
                 border-bottom-left-radius: 0;
@@ -1226,6 +1227,23 @@
         height: 30px;
         padding: 0 10px;
     }
+    &__counter-number {
+        position: relative;
+        width: auto;
+        padding: 0;
+        background-color: transparent;
+        width: 40px;
+        left: 12px;
+        font-size: 20px;
+    }
+    &__counter-number::-webkit-outer-spin-button,
+    &__counter-number::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    &__counter--plus {
+        position: relative;
+        left: -5px;
+    }
     &__product-price {
         font-weight: bold;
         font-size: 16px;
@@ -1253,6 +1271,9 @@
             font-weight: bold;
             font-size: 22px;
             line-height: 28px;
+            &::before {
+                content: "$";
+            }
         }
     }
 }
@@ -1924,6 +1945,38 @@
         margin-bottom: 30px;
         padding-bottom: 10px;
         border-bottom: 0.5px solid $gray;
+        .ui-slider-handle {
+            border-radius: 50%;
+            width: 13px;
+            height: 13px;
+            background-color: $gold;
+            top: -3px;
+            margin-left: -0.2em;
+            border: none;
+        }
+        .ui-slider-range {
+            background-color: $gold;
+            height: 9px;
+        }
+        .ui-slider {
+            height: 10px;
+            border-radius: 11px;
+            border: 1px solid $gold;
+        }
+        #amount {
+            font-family: $font;
+            width: 110px;
+            text-align: right;
+        }
+    }
+    .shop__price-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .shop__filters-pretitle {
+        margin-bottom: 0;
     }
     .shop__filters-size {
         margin-bottom: 30px;
@@ -1955,13 +2008,19 @@
         margin-bottom: -10px;
     }
     .shop__color-item {
-        border: 0.5px solid #000;
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        border-radius: 50%;
+        a {
+            border: 0.5px solid #000;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+        }
+        .color--black {
+            background-color: #000;
+        }
+        .color--white {
+            background-color: #fff;
+        }
     }
 }
-
-

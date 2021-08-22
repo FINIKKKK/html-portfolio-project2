@@ -9,9 +9,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Bellota:300,regular,700" rel="stylesheet" />
 
     <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bellota:300,regular,700" rel="stylesheet" />
 
 
 </head>
@@ -92,56 +92,60 @@
             <div class="cart__inner">
 
                 <div class="cart__products-inner">
-                    <div class="cart__products">
-                        <div class="cart__product">
-                            <div class="cart__product-img">
+                    <table class="cart__products">
+                        <tr class="cart__product">
+                            <td class="cart__product-img">
                                 <img src="./img/product-1.jpg" alt="">
-                            </div>
-                            <div class="cart__product-name">
+                            </td>
+                            <td class="cart__product-name">
                                 <div class="cart__product-category">Майка</div>
                                 <div class="cart__product-title">Whether</div>
-                            </div>
-                            <div class="cart__product-counter">
-                                <button class="cart__counter-btn">-</button>
-                                <div class="cart__counter-number">1</div>
-                                <button class="cart__counter-btn">+</button>
-                            </div>
-                            <div class="cart__product-price">$17.00</div>
-                            <button class="cart__product-btn">
-                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M19 6.91L17.59 5.5L12 11.09L6.41 5.5L5 6.91L10.59 12.5L5 18.09L6.41 19.5L12 13.91L17.59 19.5L19 18.09L13.41 12.5L19 6.91Z"
-                                        fill="#787878" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="cart__product">
-                            <div class="cart__product-img">
+                            </td>
+                            <td class="cart__product-counter">
+                                <button class="cart__counter-btn cart__counter--minus">-</button>
+                                <input type="number" class="cart__counter-number" min='1' max='9' value='1' id='cart-counter' name='counter'>
+                                <button class="cart__counter-btn cart__counter--plus">+</button>
+                            </td>
+                            <td class="cart__product-price">$17.00</td>
+                            <td>
+                                <button class="cart__product-btn">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M19 6.91L17.59 5.5L12 11.09L6.41 5.5L5 6.91L10.59 12.5L5 18.09L6.41 19.5L12 13.91L17.59 19.5L19 18.09L13.41 12.5L19 6.91Z"
+                                            fill="#787878" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="cart__product">
+                            <td class="cart__product-img">
                                 <img src="./img/product-1.jpg" alt="">
-                            </div>
-                            <div class="cart__product-name">
+                            </td>
+                            <td class="cart__product-name">
                                 <div class="cart__product-category">Майка</div>
                                 <div class="cart__product-title">Whether</div>
-                            </div>
-                            <div class="cart__product-counter">
-                                <button class="cart__counter-btn">-</button>
-                                <div class="cart__counter-number">1</div>
-                                <button class="cart__counter-btn">+</button>
-                            </div>
-                            <div class="cart__product-price">$17.00</div>
-                            <button class="cart__product-btn">
-                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M19 6.91L17.59 5.5L12 11.09L6.41 5.5L5 6.91L10.59 12.5L5 18.09L6.41 19.5L12 13.91L17.59 19.5L19 18.09L13.41 12.5L19 6.91Z"
-                                        fill="#787878" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+                            </td>
+                            <td class="cart__product-counter">
+                                <button class="cart__counter-btn cart__counter--minus">-</button>
+                                <input type="number" class="cart__counter-number" min='1' max='9' value='1' id='cart-counter' name='counter'>
+                                <button class="cart__counter-btn cart__counter--plus">+</button>
+                            </td>
+                            <td class="cart__product-price">$17.00</td>
+                            <td>
+                                <button class="cart__product-btn">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M19 6.91L17.59 5.5L12 11.09L6.41 5.5L5 6.91L10.59 12.5L5 18.09L6.41 19.5L12 13.91L17.59 19.5L19 18.09L13.41 12.5L19 6.91Z"
+                                            fill="#787878" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
                     <div class="cart__bill">
-                        Общая сумма <span>$30.9</span>
+                        Общая сумма <span class="cart__bill-sum">30.9</span>
                     </div>
                 </div>
 

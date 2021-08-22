@@ -1009,32 +1009,39 @@
                             <h3 class="shop__filters-title shop__sidebar-title">Фильтры</h3>
                             <div class="shop__sidebar-inner">
                                 <div class="shop__filters-price">
-                                    <h4 class="shop__price-title shop__filters-pretitle">Цена</h4>
-
+                                    <div class="shop__price-header">
+                                        <h4 class="shop__price-title shop__filters-pretitle">Цена</h4>
+                                        <input type="text" id="amount" readonly>
+                                    </div>
+                                    <div id="slider-range"></div>
                                 </div>
                                 <div class="shop__filters-size">
                                     <h4 class="shop__size-title shop__filters-pretitle">Размер</h4>
                                     <div class="shop__size-list">
                                         <div class="checkbox shop__size-cheakbox">
-                                            <label for="check">Маленький</label>
-                                            <input type="checkbox" value="check">
+                                            <label for="smallSize">Маленький</label>
+                                            <input type="checkbox" id="smallSize" value>
                                         </div>
                                         <div class="checkbox shop__size-cheakbox">
-                                            <label for="check">Средний</label>
-                                            <input type="checkbox" value="check">
+                                            <label for="averageSize">Средний</label>
+                                            <input type="checkbox" id="averageSize" value>
                                         </div>
                                         <div class="checkbox shop__size-cheakbox">
-                                            <label for="check">Большой</label>
-                                            <input type="checkbox" value="check">
+                                            <label for="bigSize">Большой</label>
+                                            <input type="checkbox" id="bigSize" value>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="shop__filters-color">
                                     <h4 class="shop__price-title shop__filters-pretitle">Цвет</h4>
-                                    <div class="shop__color-list">
-                                        <div class="shop__color-item" style="background-color: #000;"></div>
-                                        <div class="shop__color-item" style="background-color: #fff;"></div>
-                                    </div>
+                                    <ul class="shop__color-list">
+                                        <li class="shop__color-item">
+                                            <a href="#" class="color--black"></a>
+                                        </li>
+                                        <li class="shop__color-item">
+                                            <a href="#" class="color--white"></a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -1047,10 +1054,15 @@
     </main>
 
 
+
+
+
     @@include('blocks/_footer.html')
 
 
     @@include('blocks/_js.html')
+
+
 
 </body>
 
