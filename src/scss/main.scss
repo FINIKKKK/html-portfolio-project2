@@ -4,6 +4,7 @@
     width: 100%;
     height: 80px;
     z-index: 200;
+    padding: 0 15px;
     padding-top: 10px;
     transition: padding 0.3s, height 0.3s, background-color 0.3s;
     .menu {
@@ -76,7 +77,8 @@
     }
     &.header-black {
         height: 60px;
-        padding: 0;
+        padding: 0 15px;
+        padding-top: 10px;
         .menu {
             height: 60px;
             align-content: center;
@@ -208,6 +210,16 @@
             .hamburger__line:nth-child(3) {
                 transform: translate(0%, -11px) rotate(-315deg);
             }
+        }
+    }
+    @media (min-width: 700px) {
+        .menu__list::before {
+            width: 40vw !important;
+        }
+    }
+    @media (min-width: 500px) {
+        .menu__list::before {
+            width: 60vw !important;
         }
     }
 }
@@ -373,14 +385,17 @@
         justify-content: center;
     }
     &__item-img {
-        background-color: rgba(#fff, 0.25);
-        backdrop-filter: blur(35px);
+        background-color: rgba(#fff, 0.35);
+        backdrop-filter: blur(10px);
+        z-index: 10;
         transition: 0.3s;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 450px;
         height: 560px;
+        left: 50px;
+        position: relative;
         img {
             width: 70%;
             height: 70%;
@@ -391,7 +406,7 @@
         background-image: url(../img/bg--offers__item-content.png);
         background-repeat: no-repeat;
         background-position: center;
-        margin-left: -90px;
+        margin-left: -60px;
         color: #fff;
         text-align: center;
         padding: 160px 145px 100px;
@@ -605,7 +620,7 @@
         bottom: 0;
     }
     &__item-category {
-        color: $gray;
+        color: #000;
         font-weight: 300;
         font-size: 12px;
         line-height: 15px;
@@ -914,6 +929,9 @@
         color: $white;
         padding: 25px 0px;
         width: 100%;
+        b {
+            font-weight: 700;
+        }
     }
 }
 
@@ -978,7 +996,7 @@
         color: $black;
         margin-top: 0px;
         position: relative;
-        top: 60px;
+        top: 80px;
         margin-bottom: 60px;
     }
 }
@@ -1674,6 +1692,9 @@
     }
     .prev {
         margin-bottom: 2px;
+        svg {
+            margin: 0;
+        }
     }
     .next:hover,
     .prev:hover {
@@ -1751,14 +1772,13 @@
     .comment {
         margin-bottom: 35px;
         display: flex;
-        justify-content: space-between;
     }
     .comment__header {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-right: 20px;
+        margin-right: 40px;
     }
     .comment__avatar {
         width: 90px;
@@ -1784,6 +1804,9 @@
     .comment__person-date {
         font-size: 11px;
         color: #a1a1a1;
+    }
+    .comment__text {
+        padding-top: 20px;
     }
     .comment__form {
         padding-top: 75px;
@@ -1823,39 +1846,6 @@
         font-size: 16px;
         color: #a1a1a1;
         margin-left: 5px;
-    }
-}
-
-// --------- companies ----------
-.companies {
-    overflow-x: hidden;
-    background: #f3f3f3;
-    &__list {
-        height: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 -45px;
-    }
-    &__item {
-        position: relative;
-        width: 160px;
-        height: 110px;
-        transition: filter 0.3s;
-        filter: grayscale(100%);
-        margin: 0 60px;
-    }
-    &__item:hover {
-        filter: grayscale(0%);
-    }
-    &__item-link {
-        width: 100%;
-        height: 100%;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     }
 }
 
@@ -1975,7 +1965,7 @@
         justify-content: space-between;
         margin-bottom: 10px;
     }
-    .shop__filters-pretitle {
+    .shop__price-title {
         margin-bottom: 0;
     }
     .shop__filters-size {
@@ -1996,6 +1986,9 @@
     }
     .shop__size-cheakbox:not(:last-child) {
         margin-bottom: 8px;
+    }
+    .shop__price-title {
+        margin-bottom: 10px;
     }
     .shop__filters-color {
         padding-bottom: 10px;

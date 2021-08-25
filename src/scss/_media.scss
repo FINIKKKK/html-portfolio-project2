@@ -1,29 +1,39 @@
-@media(min-width: 2000px) {
+//Min-Width: 2000px ================================
+@media (min-width: 2000px) {
     .subscribe {
         background-image: none !important;
         background-color: $gold;
-        box-shadow: 0 10px 30px 10px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 30px 10px rgba(0, 0, 0, 0.2);
         height: 335px !important;
         margin-bottom: 100px;
     }
 }
 
-@media(min-width: 1500px) {
+//Min-Width: 1500px ================================
+@media (min-width: 1500px) {
     .subscribe {
         background-size: cover;
         background-position: center -100px !important;
     }
-}
-
-
-@media(min-width: 700px) {
-    .menu__list::before {
-        width: 40vw !important;
+    .offers {
+        padding-bottom: 170px;
+        padding-top: 170px;
+    }
+    .offers__inner {
+        top: -101px;
+        position: relative;
     }
 }
-@media(min-width: 500px) {
-    .menu__list::before {
-        width: 60vw !important;
+
+//Max-Width: 1500px ================================
+@media (max-width: 1500px) {
+    .offers {
+        padding-bottom: 150px;
+        padding-top: 0px;
+    }
+    .offers__inner {
+        top: 0px !important;
+        position: relative;
     }
 }
 
@@ -660,13 +670,6 @@
 
 //Max-Width: 650px ================================
 @media (max-width: 650px) {
-    .companies__item {
-        width: 120px;
-        height: 75px;
-    }
-    .companies__list {
-        height: 110px;
-    }
     .about__design-img {
         width: 330px;
         height: 330px;
@@ -698,16 +701,6 @@
         width: 148px;
         height: 230px;
     }
-    // .companies__list {
-    //     height: 125px;
-    // }
-    // .companies__item-link {
-    //     width: 120px;
-    //     height: 80px;
-    // }
-    // .companies__item:not(:last-child) {
-    //     margin-right: 40px;
-    // }
     .first-screen__title {
         font-size: 60px;
         line-height: 80px;
@@ -715,6 +708,9 @@
     .post--single {
         .comment {
             display: block;
+        }
+        .comment__text {
+            padding-top: 0;
         }
         .comment__header {
             justify-content: start;
