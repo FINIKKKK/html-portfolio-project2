@@ -1,13 +1,34 @@
+// Проверка поддержки webp, добавление класс webp или no-webp для HTML
+(function isWebp() {
+  // Проверка поддержки webp
+  function testWebP(callback) {
+    let webP = new Image();
+    webP.onload = webP.onerror = function () {
+      callback(webP.height == 2);
+    };
+    webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+  }
+  // Добавление класса _webp или _no-webp для HTML
+  testWebP(function (support) {
+    let className = support === true ? 'webp' : 'no-webp';
+    document.documentElement.classList.add(className);
+  })
+}())
+
+
 // Jquery ----------------
-@@include('../js/jquery-3.6.0.min.js');
+@@include('../../node_modules/jquery/dist/jquery.min.js');
+
 
 
 // Plugins ----------------
-@@include('../js/slick.min.js');
-@@include('../js/jquery-ui.min.js');
+@@include('./plugins/slick.min.js');
+@@include('./plugins/jquery-ui.min.js');
+
 
 
 // Main-JS -----------------
-@@include('../js/main.js');
+@@include('./main.js');
+
 
 

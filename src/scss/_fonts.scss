@@ -1,1 +1,21 @@
-
+@font-face{
+	font-family: Bellota;
+	font-display: swap;
+	src: url("../fonts/Bellota-Bold.woff2") format("woff2"), url("../fonts/Bellota-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face{
+	font-family: Bellota;
+	font-display: swap;
+	src: url("../fonts/Bellota-Regular.woff2") format("woff2"), url("../fonts/Bellota-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face{
+	font-family: Bellota;
+	font-display: swap;
+	src: url("../fonts/Bellota-Light.woff2") format("woff2"), url("../fonts/Bellota-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}

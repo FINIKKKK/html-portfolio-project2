@@ -1,0 +1,91 @@
+<!-- Footer
+======================================================= -->
+<footer class="footer">
+    <div class="footer__inner">
+
+        <div class="subscribe">
+            <div class="subscribe__inner">
+                <h3 class="subscribe__title">Подпишись</h3>
+
+                <form class="subscribe__form" id="subscribe__form">
+                    <div class="subscribe__form-input input-block">
+                        <input type="text" id="subscribe__form-email" name="subscribe__form-email" class="input" placeholder="Email:">
+                    </div>
+                    <button type="submit" class="subscribe__form-btn btn btn-white">Подписаться</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__nav-follow">
+                    <h5 class="footer__follow-title">Следи за нами</h5>
+                    @@include('../../blocks/_soclist.html', {
+                    "class": "footer__soclist"
+                    })
+                </div>
+
+                <nav class="menu">
+                    <div class="menu__item">
+                        <h6 class="menu__item-title">Меню</h6>
+                        <ul class="menu__item-links">
+                            <li class="menu__item-link">
+                                <a href="#">Магазин</a>
+                            </li>
+                            <li class="menu__item-link">
+                                <a href="#">О Компании</a>
+                            </li>
+                            <li class="menu__item-link">
+                                <a href="#"">Связаться с нами</a>
+                            </li>
+                            <li class=" menu__item-link">
+                                    <a href="#">Корзина</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu__item">
+                        <h6 class="menu__item-title">Магазин</h6>
+                        <ul class="menu__item-links">
+                            <li class="menu__item-link">
+                                <a href="#">Новое</a>
+                            </li>
+                            <li class="menu__item-link">
+                                <a href="#">Рубашки</a>
+                            </li>
+                            <li class="menu__item-link">
+                                <a href="#">Куртки</a>
+                            </li>
+                            <li class="menu__item-link">
+                                <a href="#">Обувь</a>
+                            </li>
+                            <li class="menu__item-link">
+                                <a href="#">Аксессуары</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu__item">
+                        <h6 class="menu__item-title">Разное</h6>
+                        <ul class="menu__item-links">
+                            <li class="menu__item-link">
+                                <a href="#">Условия возврата</a>
+                            </li>
+                            <li class="menu__item-link">
+                                <a href="#">Способы оплаты</a>
+                            </li>
+                            <li class="menu__item-link">
+                                <a href="#">FAQ</a>
+                            </li>
+                            <li class="menu__item-link">
+                                <a href="#">Политика компании</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="footer__copy">Создатель шаблона <b>Dmitriy Bozhko / DIGIKRASH</b></div>
+        </div>
+
+    </div>
+</footer>
+<!-- Footer End -->

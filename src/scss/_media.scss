@@ -284,6 +284,63 @@
 
 //Max-Width: 900px ================================
 @media (max-width: 900px) {
+    .header {
+        .hamburger {
+            display: flex;
+        }
+        .menu {
+            position: relative;
+        }
+        .menu__list {
+            
+            pointer-events: none;
+            z-index: 1000;
+            position: absolute;
+            right: 0;
+            top: 150px;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            overflow-x: hidden;
+            &::before {
+                content: "";
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100vh;
+                width: 100vw;
+                transform: translate(100vw, 0);
+                -ms-transform: translatex(-100vw);
+                box-sizing: border-box;
+                pointer-events: none;
+                padding-top: 125px;
+                transition: width 475ms ease-out, transform 450ms ease, border-radius 0.8s 0.1s ease;
+                border-bottom-left-radius: 100vw;
+                background-color: $black;
+            }
+        }
+        .menu__list-item {
+            list-style: none;
+            text-transform: uppercase;
+            pointer-events: auto;
+            white-space: nowrap;
+            box-sizing: border-box;
+            transform: translatex(100vw);
+            -ms-transform: translatex(-100vw);
+            a {
+                transition: background-color 0.3s;
+                text-decoration: none;
+                color: #fff;
+                text-align: right;
+                display: block;
+                padding: 25px 10px;
+                font-size: calc(40px - 0.5vw);
+            }
+        }
+        .menu__list-item:hover a {
+            background-color: $gold;
+        }
+    }
     .blog__items {
         display: grid;
         grid-gap: 10px;

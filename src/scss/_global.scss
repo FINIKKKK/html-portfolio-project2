@@ -8,6 +8,9 @@ $white: rgba(255, 255, 255, 0.75);
 // ------- Global-Tags --------
 html {
     box-sizing: border-box;
+    &.hidden {
+        overflow-y: hidden;
+    }
 }
 *,
 *::before,
@@ -15,14 +18,14 @@ html {
     box-sizing: inherit;
 }
 body {
+    position: relative;
+    overflow-x: hidden;
+    min-width: 320px;
     font-family: $font;
     font-weight: 400;
     font-size: 18px;
     line-height: 23px;
     color: $black;
-    min-width: 320px;
-    overflow-x: hidden;
-    position: relative;
 }
 a {
     text-decoration: none;
@@ -30,32 +33,38 @@ a {
     color: $black;
 }
 button {
-    border: none;
     outline: none;
-    cursor: pointer;
-    background-color: transparent;
+    border: none;
     padding: 0;
+    font-family: inherit;
+    background-color: transparent;
+    cursor: pointer;
 }
 input {
-    background-color: #fff;
-    border: none;
     outline: none;
+    border: none;
+    font-family: inherit;
+    background-color: transparent;
 }
 textarea {
+    outline: none;
+    border: none;
+    font-family: inherit;
+    background-color: transparent;
     resize: none;
+}
+section {
+    position: relative;
 }
 
 
-// ######################################
 // ----------- Global-Class -------------
-// ######################################
-
-// --------- Container ----------
 .container {
     max-width: 1170px;
     margin: 0 auto;
     padding: 0 15px;
 }
+
 .btn {
     font-weight: 300;
     font-size: 20px;
@@ -63,27 +72,27 @@ textarea {
     padding: 10px 24px;
     background-color: $gold;
     font-family: $font;
-    background: lighten($gold, 3%);  
+    background: lighten($gold, 3%);
     border: 1px solid darken($gold, 4%);
     box-shadow: 0px 2px 0 darken($gold, 5%), 2px 4px 6px darken($gold, 2%);
     font-weight: 900;
     letter-spacing: 1px;
     transition: all 150ms linear;
+    &:hover {
+        background: darken($gold, 1.5%);
+        border: 1px solid rgba(#000, 0.05);
+        box-shadow: 1px 1px 2px rgba(#fff, 0.2);
+        text-decoration: none;
+        text-shadow: -1px -1px 0 darken($gold, 9.5%);
+        transition: all 250ms linear;
+    }
+    &-white {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(40px);
+    }
 }
-.btn:hover {
-    background: darken($gold, 1.5%);
-    border: 1px solid rgba(#000, .05);
-    box-shadow: 1px 1px 2px rgba(#fff, .2);
-    color: lighten($gold, 18%); 
-    text-decoration: none;
-    text-shadow: -1px -1px 0 darken($gold, 9.5%);
-    transition: all 250ms linear;
-}
-.btn-white {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(40px);
-}
+
 .title-line {
     padding-bottom: 10px;
     position: relative;
@@ -98,6 +107,7 @@ textarea {
         background-color: $gold;
     }
 }
+
 .soclist {
     display: flex;
     align-items: center;
@@ -145,6 +155,7 @@ textarea {
         z-index: 2;
     }
 }
+
 .stars {
     display: flex;
     align-items: center;

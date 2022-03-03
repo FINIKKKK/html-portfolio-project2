@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
-@@include('blocks/_head.html', {
+@@include('./blocks/main/_head.html', {
 "title": "Блог",
 })
 
 <body>
 
-    @@include('blocks/_header.html')
+    @@include('./blocks/main/_header.html')
 
 
-    @@include('blocks/_first-screen.html', {
+    @@include('./blocks/_first-screen.html', {
     "title": "Блог",
     })
 
 
-    @@include('blocks/_info-nav.html', {
+    @@include('./blocks/_info-nav.html', {
     "title": "Блог",
     })
 
@@ -83,11 +83,11 @@
 
                     </div>
 
-                    @@include('blocks/_pagination.html')
+                    @@include('./blocks/_pagination.html')
                 </div>
 
                 <div class="main--right">
-                    @@include('blocks/_sidebar.html')
+                    @@include('./blocks/_sidebar.html')
                 </div>
 
             </div>
@@ -96,10 +96,10 @@
     </main>
 
 
-    @@include('blocks/_footer.html')
+    @@include('./blocks/main/_footer.html')
 
 
-    @@include('blocks/_js.html')
+    @@include('./blocks/main/_js.html')
 
 </body>
 

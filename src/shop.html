@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-@@include('blocks/_head.html', {
+@@include('./blocks/main/_head.html', {
 "title": "Магазин",
 })
 
 <body>
 
-    @@include('blocks/_header.html')
+    @@include('./blocks/main/_header.html')
 
 
-    @@include('blocks/_first-screen.html', {
+    @@include('./blocks/_first-screen.html', {
     "title": "Магазин",
     })
 
 
-    @@include('blocks/_info-nav.html', {
+    @@include('./blocks/_info-nav.html', {
     "title": "Магазин",
     })
 
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="shop__products">
-                            @@include('blocks/_product.html', {
+                            @@include('./blocks/_product.html', {
                             "img": "./img/product-1.jpg",
                             "category": "Майка",
                             "name": "Whether",
@@ -58,7 +58,7 @@
                             "star5": "star--not",
                             })
 
-                            @@include('blocks/_product.html', {
+                            @@include('./blocks/_product.html', {
                             "img": "./img/product-2.jpg",
                             "category": "Футболка",
                             "name": "LoveLife",
@@ -71,7 +71,7 @@
                             "star5": "",
                             })
 
-                            @@include('blocks/_product.html', {
+                            @@include('./blocks/_product.html', {
                             "img": "./img/product-3.jpg",
                             "category": "Футболка",
                             "name": "Wrastler",
@@ -84,7 +84,7 @@
                             "star5": "star--not",
                             })
 
-                            @@include('blocks/_product.html', {
+                            @@include('./blocks/_product.html', {
                             "img": "./img/product-4.jpg",
                             "category": "Рубашка",
                             "name": "Merris",
@@ -97,7 +97,7 @@
                             "star5": "star--not",
                             })
 
-                            @@include('blocks/_product.html', {
+                            @@include('./blocks/_product.html', {
                             "img": "./img/product-1.jpg",
                             "category": "Майка",
                             "name": "Whether",
@@ -110,7 +110,7 @@
                             "star5": "star--not",
                             })
 
-                            @@include('blocks/_product.html', {
+                            @@include('./blocks/_product.html', {
                             "img": "./img/product-2.jpg",
                             "category": "Футболка",
                             "name": "LoveLife",
@@ -123,7 +123,7 @@
                             "star5": "",
                             })
 
-                            @@include('blocks/_product.html', {
+                            @@include('./blocks/_product.html', {
                             "img": "./img/product-3.jpg",
                             "category": "Футболка",
                             "name": "Wrastler",
@@ -136,7 +136,7 @@
                             "star5": "star--not",
                             })
 
-                            @@include('blocks/_product.html', {
+                            @@include('./blocks/_product.html', {
                             "img": "./img/product-4.jpg",
                             "category": "Рубашка",
                             "name": "Merris",
@@ -149,7 +149,7 @@
                             "star5": "star--not",
                             })
                             
-                            @@include('blocks/_product.html', {
+                            @@include('./blocks/_product.html', {
                             "img": "./img/product-1.jpg",
                             "category": "Майка",
                             "name": "Whether",
@@ -164,7 +164,7 @@
 
                         </div>
 
-                        @@include('blocks/_pagination.html')
+                        @@include('./blocks/_pagination.html')
 
                     </div>
                 </div>
@@ -250,10 +250,10 @@
 
 
 
-    @@include('blocks/_footer.html')
+    @@include('./blocks/main/_footer.html')
 
 
-    @@include('blocks/_js.html')
+    @@include('./blocks/main/_js.html')
 
 
 
