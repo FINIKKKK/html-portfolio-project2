@@ -24,8 +24,11 @@
 // Plugins ----------------
 @@include('./plugins/slick.min.js');
 @@include('./plugins/jquery-ui.min.js');
+@@include('./plugins/simple-select.js');
 
-
+@@include('../../node_modules/swiper/swiper-bundle.min.js');
+@@include('../../node_modules/wowjs/dist/wow.min.js');
+@@include('../../node_modules/translater.js/dist/translater.min.js');
 
 // Main-JS -----------------
 @@include('./main.js');

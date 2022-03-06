@@ -29,13 +29,14 @@
 
                         <div class="shop__header">
                             <h3 class="shop__header-title">Все</h3>
+
                             <div class="shop__header-filters">
-                                <select name="selectPopular" class="shop__header-filter select">
+                                <select class="shop__header-filter simple-select select">
                                     <option class="shop__header-option option" value="new" selected="selected">Новые
                                     </option>
                                     <option class="shop__header-option option" value="popular">Популярные</option>
                                 </select>
-                                <select name="selectPrice" class="shop__header-filter select">
+                                <select name="selectPrice" class="shop__header-filter simple-select select">
                                     <option class="shop__header-option option" value="smallPrice" selected="selected">
                                         Цена, по убыванию</option>
                                     <option class="shop__header-option option" value="bigPrice">Цена, по возрастанию
@@ -148,7 +149,7 @@
                             "star4": "",
                             "star5": "star--not",
                             })
-                            
+
                             @@include('./blocks/_product.html', {
                             "img": "./img/product-1.jpg",
                             "category": "Майка",
@@ -212,8 +213,10 @@
                                     <h4 class="shop__size-title shop__filters-pretitle">Размер</h4>
                                     <div class="shop__size-list">
                                         <div class="checkbox shop__size-cheakbox">
-                                            <label for="smallSize">Маленький</label>
-                                            <input type="checkbox" id="smallSize" value>
+                                            <div class="checkbox shop__size-cheakbox">
+                                                <input class="custom-checkbox" type="checkbox" id="smallSize" name="smallSize">
+                                                <label for="smallSize">Маленький</label>
+                                            </div>
                                         </div>
                                         <div class="checkbox shop__size-cheakbox">
                                             <label for="averageSize">Средний</label>

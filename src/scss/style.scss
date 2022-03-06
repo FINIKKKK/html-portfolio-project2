@@ -10,8 +10,13 @@
 
 
 // ---- Plugins ----
-@import "plugins/slick.scss";
-@import "plugins/jquery-ui.scss";
+@import "./plugins/slick.scss";
+@import "./plugins/jquery-ui.scss";
+@import "./plugins/simple-select.scss";
+
+@import "./plugins/animate.scss";
+
+@import "../../node_modules/swiper/swiper-bundle.min.css";
 
 
 // ---- Media-Mobile ----

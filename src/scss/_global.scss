@@ -57,7 +57,6 @@ section {
     position: relative;
 }
 
-
 // ----------- Global-Class -------------
 .container {
     max-width: 1170px;
@@ -134,7 +133,7 @@ section {
         transition: 0.3s cubic-bezier(0.95, 0.32, 0.37, 1.21);
     }
     &__item-link:hover:before {
-        transform: scale(1) translate(-50%, -50%);
+        transform: scale(1) translate(-50%, -55%);
     }
     &__item a:hover:before {
         background: $gold;
@@ -162,6 +161,11 @@ section {
     .star:not(:last-child) {
         margin-right: 8px;
     }
+    .star {
+        svg path{
+            fill: $black;
+        }
+    }
     .star--not {
         g path:nth-child(1) {
             fill: rgba(0, 0, 0, 0);
@@ -171,6 +175,7 @@ section {
 
 .prev,
 .next {
+    cursor: pointer;
     position: absolute;
     z-index: 25;
     top: 50%;
@@ -178,28 +183,29 @@ section {
     svg {
         width: 67px;
         height: 67px;
-    }
-    svg path {
         fill: $gold;
         transition: fill 0.3s;
     }
     &:hover {
-        svg path {
-            fill: $gold;
+        svg {
+            fill: darken($gold, 20%);
+        }
+    }
+    &.swiper-button-disabled {
+        pointer-events: none;
+        svg {
+            fill: $gray;
         }
     }
 }
-.prev {
-    transform: rotate(-180deg);
-    svg {
-        margin-top: 15px;
-    }
-}
 .next {
-    svg {
-        margin-top: 5px;
-    }
     right: 0;
+}
+.swiper-pagination {
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        background-color: $gold;
+    }
 }
 
 .main {
@@ -228,14 +234,160 @@ section {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     color: $black;
+    border: 2px solid transparent;
     &::placeholder {
         color: $gray;
     }
+    &.input-error {
+        border: 2px solid rgb(128, 53, 53) !important;
+    }
+}
+.error {
+    position: absolute;
+    bottom: -25px;
+    left: 15px;
+    z-index: 30;
+    background-color: darken($gold, 0%);
+    border: 2px solid darken($gold, 5%);
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: auto;
+    font-size: 16px;
+    line-height: 18px;
+    &::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 15px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent $gold transparent;
+    }
 }
 
-.select {
-    border: none;
-    font-family: $font;
+.simple-select {
+    span {
+        border: none;
+    }
+}
+
+.checkbox {
+    label {
+        transition: 0.3s;
+    }
+    &:hover {
+        .custom-checkbox + label::after {
+            border-color: $gold;
+        }
+        label {
+            color: $gold;
+        }
+    }
+    .custom-checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    /* для элемента label, связанного с .custom-checkbox */
+    .custom-checkbox + label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        user-select: none;
+    }
+    /* создание в label псевдоэлемента before со следующими стилями */
+    .custom-checkbox + label::after {
+        transition: 0.3s;
+        content: "";
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid $black;
+        border-radius: 2px;
+        margin-left: auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 60% 60%;
+    }
+    /* стили для чекбокса, находящегося в состоянии checked */
+    .custom-checkbox:checked + label::after {
+        border-color: $gold;
+        background-color: $gold;
+        background-image: url("../img/check.svg");
+    }
+}
+
+$heart-red: #cd0928;
+$heart-default-color: #000;
+
+#like-button:hover {
+    cursor: pointer;
+    color: $heart-red;
+}
+
+#like-button.not-liked {
+    color: $heart-default-color;
+}
+
+#like-button.not-liked:hover {
+    color: $heart-red;
+}
+
+#like-button.liked {
+    color: $heart-red;
+}
+
+#like-button.liked-shaked {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    transform: rotate(0deg);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(0, 0px, 0) rotate(0deg);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(0, -2px, 0) rotate(5deg);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(0, 0px, 0) rotate(0deg);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(0, -2px, 0) rotate(-5deg);
+    }
+}
+
+.button-heart {
+    &.active {
+        animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        transform: translate3d(0, 0, 0) rotate(0deg);
+        transform: rotate(0deg);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+}
+
+html[lang="ru"] [lang="en"] {
+    display: none;
+}
+html[lang="en"] [lang="ru"] {
+    display: none;
 }
 
 // --------- ScrollBar ----------
@@ -253,3 +405,101 @@ section {
 ::selection {
     background: rgba($gold, 0.65);
 }
+
+
+.btn__icon {
+    fill: transparent;
+    stroke: rgba(0, 0, 0, 0.4);
+    transition: stroke 0.2s ease, fill 0.2s ease;
+    transform-origin: center center;
+}
+.btn_like {
+    background-color: rgba($gold, 1) !important;
+}
+.btn_like svg {
+    animation: heartAnimation 1s ease both;
+}
+.btn_like::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    transform: scale(0.8);
+    background-image: radial-gradient(circle at 50% 50%, $gold 70%, $gold 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%),
+        radial-gradient(circle at 50% 50%, $gold 70%, transparent 71%);
+    background-position: 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px,
+        65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, center center;
+    background-size: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
+        0px 0px, 0px 0px, 0px 0px, 0% 0%;
+    background-repeat: no-repeat;
+    animation: confetiAnimation 1s ease both;
+}
+
+@keyframes confetiAnimation {
+    0% {
+        background-position: 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px,
+            65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, center center;
+        background-size: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
+            0px 0px, 0px 0px, 0px 0px, 0px 0px, 0% 0%;
+    }
+
+    20% {
+        background-position: 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px,
+            65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, 65px 65px, center center;
+        background-size: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
+            0px 0px, 0px 0px, 0px 0px, 0px 0px, 100% 100%;
+    }
+
+    35% {
+        background-position: 125px 39px, 111px 39px, 182px 72px, 174px 64px, 193px 141px, 195px 128px, 145px 192px,
+            157px 185px, 76px 186px, 89px 190px, 39px 128px, 43px 141px, 60px 62px, 52px 74px, center center;
+        background-size: 5px 5px, 5px 5px, 5px 5px, 5px 5px, 5px 5px, 5px 5px, 5px 5px, 5px 5px, 5px 5px, 5px 5px,
+            5px 5px, 5px 5px, 5px 5px, 5px 5px, 0% 0%;
+    }
+
+    50% {
+        background-position: 125px 24px, 111px 39px, 192px 66px, 174px 64px, 201px 145px, 195px 128px, 145px 201px,
+            157px 185px, 66px 192px, 89px 190px, 24px 125px, 43px 141px, 50px 50px, 52px 74px, center center;
+        background-size: 10px 10px, 5px 5px, 10px 10px, 5px 5px, 10px 10px, 5px 5px, 10px 10px, 5px 5px, 10px 10px,
+            5px 5px, 10px 10px, 5px 5px, 10px 10px, 5px 5px, 0% 0%;
+    }
+
+    100% {
+        background-position: 130px 29px, 113px 41px, 197px 71px, 176px 66px, 206px 150px, 197px 130px, 150px 206px,
+            159px 187px, 71px 197px, 91px 192px, 29px 130px, 45px 143px, 55px 55px, 54px 76px, center center;
+        background-size: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
+            0px 0px, 0px 0px, 0px 0px, 0px 0px, 0% 0%;
+    }
+}
+@keyframes heartAnimation {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    5%,
+    20% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+    55% {
+        transform: scale(0.8);
+    }
+}
+
+
+
+

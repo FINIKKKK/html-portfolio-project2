@@ -44,9 +44,9 @@
                             <td class="cart__product-price">$17.00</td>
                             <td>
                                 <button class="cart__product-btn">
-                                   <svg width="20" height="20">
-                                       <use xlink:href="./img/icons/icons.svg#close"/>
-                                   </svg>
+                                    <svg width="20" height="20">
+                                        <use xlink:href="./img/icons/icons.svg#close" />
+                                    </svg>
                                 </button>
                             </td>
                         </tr>
@@ -69,17 +69,25 @@
                             <td>
                                 <button class="cart__product-btn">
                                     <svg width="20" height="20">
-                                        <use xlink:href="./img/icons/icons.svg#close"/>
+                                        <use xlink:href="./img/icons/icons.svg#close" />
                                     </svg>
                                 </button>
                             </td>
                         </tr>
                     </table>
                     <div class="cart__bill">
-                        Общая сумма <span class="cart__bill-sum">41.0</span>
+                        Общая сумма: <span class="cart__bill-sum">41.0</span>
                     </div>
 
-                    <div class="cart__none">none</div>
+                    <div class="cart-empty">
+                        <div class="cart-empty__icon">
+                            <svg width="20" height="20">
+                                <use xlink:href="./img/icons/icons.svg#cart2" />
+                            </svg>
+                        </div>
+                        <p class="cart-empty__text">Ваша корзина пустая</p>
+                        <a href="shop.html" class="cart-empty__btn btn">Вернуться в Магазин</a>
+                    </div>
                 </div>
 
                 <div class="card">
@@ -136,8 +144,8 @@
                     </div>
                     <button class="card__btn btn btn-white">Проверить</button>
                 </div>
-
             </div>
+
         </div>
     </section>
     <!-- cart end -->
@@ -149,58 +157,108 @@
         <div class="container">
             <div class="similar__inner">
                 <h2 class="similar__title title-line">Похожые товары</h2>
-                <div class="products__items">
-                    @@include('./blocks/_product.html', {
-                    "img": "./img/products/product-1.jpg",
-                    "category": "Майка",
-                    "name": "Whether",
-                    "price": "17.00",
-                    //---//
-                    "star1": "",
-                    "star2": "",
-                    "star3": "",
-                    "star4": "",
-                    "star5": "star--not",
-                    })
+                <div class="swiper products__items">
+                    <div class="swiper-wrapper">
+                        @@include('./blocks/_product.html', {
+                        "img": "./img/products/product-1.jpg",
+                        "category": "Майка",
+                        "name": "Whether",
+                        "price": "17.00",
+                        //---//
+                        "star1": "",
+                        "star2": "",
+                        "star3": "",
+                        "star4": "",
+                        "star5": "star--not",
+                        "swiper": "swiper-slide",
+                        })
 
-                    @@include('./blocks/_product.html', {
-                    "img": "./img/products/product-2.jpg",
-                    "category": "Футболка",
-                    "name": "LoveLife",
-                    "price": "24.00",
-                    //---//
-                    "star1": "",
-                    "star2": "",
-                    "star3": "",
-                    "star4": "",
-                    "star5": "",
-                    })
+                        @@include('./blocks/_product.html', {
+                        "img": "./img/products/product-2.jpg",
+                        "category": "Футболка",
+                        "name": "LoveLife",
+                        "price": "24.00",
+                        //---//
+                        "star1": "",
+                        "star2": "",
+                        "star3": "",
+                        "star4": "",
+                        "star5": "",
+                        "swiper": "swiper-slide",
+                        })
 
-                    @@include('./blocks/_product.html', {
-                    "img": "./img/products/product-3.jpg",
-                    "category": "Футболка",
-                    "name": "Wrastler",
-                    "price": "21.99",
-                    //---//
-                    "star1": "",
-                    "star2": "",
-                    "star3": "",
-                    "star4": "star--not",
-                    "star5": "star--not",
-                    })
+                        @@include('./blocks/_product.html', {
+                        "img": "./img/products/product-3.jpg",
+                        "category": "Футболка",
+                        "name": "Wrastler",
+                        "price": "21.99",
+                        //---//
+                        "star1": "",
+                        "star2": "",
+                        "star3": "",
+                        "star4": "star--not",
+                        "star5": "star--not",
+                        "swiper": "swiper-slide",
+                        })
 
-                    @@include('./blocks/_product.html', {
-                    "img": "./img/products/product-4.jpg",
-                    "category": "Рубашка",
-                    "name": "Merris",
-                    "price": "32.99",
-                    //---//
-                    "star1": "",
-                    "star2": "",
-                    "star3": "",
-                    "star4": "",
-                    "star5": "star--not",
-                    })
+                        @@include('./blocks/_product.html', {
+                        "img": "./img/products/product-4.jpg",
+                        "category": "Рубашка",
+                        "name": "Merris",
+                        "price": "32.99",
+                        //---//
+                        "star1": "",
+                        "star2": "",
+                        "star3": "",
+                        "star4": "",
+                        "star5": "star--not",
+                        "swiper": "swiper-slide",
+                        })
+
+                        @@include('./blocks/_product.html', {
+                        "img": "./img/products/product-1.jpg",
+                        "category": "Майка",
+                        "name": "Whether",
+                        "price": "17.00",
+                        //---//
+                        "star1": "",
+                        "star2": "",
+                        "star3": "",
+                        "star4": "",
+                        "star5": "star--not",
+                        "swiper": "swiper-slide",
+                        })
+
+                        @@include('./blocks/_product.html', {
+                        "img": "./img/products/product-2.jpg",
+                        "category": "Футболка",
+                        "name": "LoveLife",
+                        "price": "24.00",
+                        //---//
+                        "star1": "",
+                        "star2": "",
+                        "star3": "",
+                        "star4": "",
+                        "star5": "",
+                        "swiper": "swiper-slide",
+                        })
+
+                        @@include('./blocks/_product.html', {
+                        "img": "./img/products/product-3.jpg",
+                        "category": "Футболка",
+                        "name": "Wrastler",
+                        "price": "21.99",
+                        //---//
+                        "star1": "",
+                        "star2": "",
+                        "star3": "",
+                        "star4": "star--not",
+                        "star5": "star--not",
+                        "swiper": "swiper-slide",
+                        })
+                    </div>
+
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
