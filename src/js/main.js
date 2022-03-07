@@ -43,8 +43,7 @@ $('.hamburger').on('click', function () {
 
 const offersSwiper = new Swiper('.offers__items', {
     slidesPerView: 1,
-    // spaceBetween: 30,
-    // loop: true,
+    loop: true,
     effect: 'fade',
     fadeEffect: {
         crossFade: true
@@ -53,19 +52,26 @@ const offersSwiper = new Swiper('.offers__items', {
         nextEl: '.next',
         prevEl: '.prev',
     },
-    // autoplay: {
-    //     delay: 2500,
-    //     disableOnInteraction: false,
-    // },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    autoplay: {
+        enabled: false,
+        delay: 7000,
+        disableOnInteraction: false,
+    },
 });
-// // Запуск Аutoplay только когда пользователь вошел в область видимости
-// $(window).scroll(function () {
-//     $('.ways').each(function () {
-//         if ($(window).scrollTop() + $(window).height() >= $(this).position().top && $(window).scrollTop() < $(this).position().top + $(this).height()) {
-//             swiper_ways.autoplay.start();
-//         }
-//     });
-// });
+// Запуск Аutoplay только когда пользователь вошел в область видимости
+$(window).scroll(function () {
+    $('.offers').each(function () {
+        if ($(window).scrollTop() + $(window).height() >= $(this).position().top && $(window).scrollTop() < $(this).position().top + $(this).height()) {
+            offersSwiper.autoplay.start();
+        }
+    });
+});
+
+
 
 const productsSwiper = new Swiper('.products__slider', {
     slidesPerView: 5,
@@ -402,3 +408,14 @@ $(document).ready(function () {
         }
     });
 });
+
+
+
+
+$(function() {
+    $('.companies__inner').marquee({
+      duration: 7000,
+      startVisible: true,
+      duplicated: true
+    });
+  });

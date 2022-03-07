@@ -15,26 +15,6 @@
         background-size: cover;
         background-position: center -100px !important;
     }
-    .offers {
-        padding-bottom: 170px;
-        padding-top: 170px;
-    }
-    .offers__inner {
-        top: -101px;
-        position: relative;
-    }
-}
-
-//Max-Width: 1500px ================================
-@media (max-width: 1500px) {
-    .offers {
-        padding-bottom: 150px;
-        padding-top: 0px;
-    }
-    .offers__inner {
-        top: 0px !important;
-        position: relative;
-    }
 }
 
 //Max-Width: 1200px ================================
@@ -81,40 +61,6 @@
     }
     .cart__inner {
         padding-right: 50px;
-    }
-    .offers__item-img {
-        width: 360px;
-        height: 450px;
-    }
-    .offers__item-content {
-        background-size: 85%;
-        margin-left: -87px;
-        padding: 100px 145px 67px 130px;
-    }
-    .offers .star svg {
-        width: 15px;
-        height: 15px;
-    }
-    .offers__item-btn {
-        font-weight: 300;
-        font-size: 10px;
-        line-height: 25px;
-        padding: 5px 20px;
-    }
-    .offers__item-title {
-        text-transform: capitalize;
-        font-size: 26px;
-        line-height: 32px;
-        &.title-line::after {
-            width: 80px;
-        }
-    }
-    .offers__item-price {
-        margin-bottom: 0px;
-    }
-    .offers__item-price span {
-        font-size: 46px;
-        line-height: 60px;
     }
     .philosofy__img {
         width: 375px;
@@ -344,35 +290,24 @@
             background-color: $gold;
         }
     }
-    .offers__title {
-        font-weight: 300;
-        font-size: 40px;
-        line-height: 56px;
-        text-transform: capitalize;
-        margin-bottom: 50px;
-    }
-    .offers__item {
-        flex-direction: column;
-    }
-    .offers__item-img {
-        width: 280px;
-        height: 320px;
-        background: none;
-        backdrop-filter: none;
-        z-index: 6;
-        img {
-            width: 80%;
-            height: 80%;
+    .offers {
+        .swiper-pagination {
+            display: block;
         }
-    }
-    .offers__item-content {
-        margin-left: 0;
-        margin-top: -220px;
-        background-image: none;
-        background-color: $gold;
-        padding: 220px 70px 50px;
-        z-index: 5;
-        border-radius: 20px;
+        .next,
+        .prev {
+            display: none;
+        }
+        .offers__item-img {
+            width: 260px;
+            height: 330px;
+        }
+        .offers__img-before {
+            width: 220px;
+            height: 220px;
+            right: -10%;
+            top: 20px;
+        }
     }
     .products .products__item {
         margin: 0 15px;
@@ -620,6 +555,63 @@
 
 //Max-Width: 700px ================================
 @media (max-width: 700px) {
+    .offers {
+        .offers__title {
+            margin-top: -130px;
+            font-size: 30px;
+            line-height: 38px;
+            margin-bottom: 40px;
+            padding-bottom: 5px;
+            &::after {
+                width: 80px;
+            }
+        }
+        .swiper-pagination {
+            bottom: 30px;
+        }
+        .swiper {
+            padding-top: 81px;
+            padding-bottom: 90px;
+        }
+        .swiper-wrapper {
+            margin-left: -20px;
+        }
+        .offers__item-price {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .offers__item-btn {
+            font-size: 12px;
+            line-height: 14px;
+            padding: 5px 15px;
+        }
+        .offers__item-text {
+            margin-bottom: 10px;
+            font-size: 12px;
+            line-height: 18px;
+        }
+        .offers__item-stars {
+            margin-bottom: 10px;
+        }
+        .star svg {
+            width: 11px;
+            height: 11px;
+        }
+        .offers__item-title {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 10px;
+        }
+        .offers__item-img {
+            width: 215px;
+            height: 274px;
+        }
+        .offers__img-before {
+            width: 180px;
+            height: 180px;
+        }
+    }
     .map .map__inner {
         height: 360px;
     }
@@ -763,6 +755,11 @@
 
 //Max-Width: 600px ================================
 @media (max-width: 600px) {
+    .offers {
+        .swiper-wrapper {
+            margin-left: -35px;
+        }
+    }
     .post--single .posts__pagination-item .post__pagination-title {
         font-size: 14px;
         line-height: 16px;
@@ -1141,6 +1138,141 @@
 
 //Max-Width: 500px ================================
 @media (max-width: 500px) {
+    .about__content-btn {
+        font-size: 12px;
+        line-height: 14px;
+        padding: 5px 21px;
+    }
+    .about__content-text {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    .about__content-title {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+    .about__design {
+        margin-bottom: 29px;
+    }
+    .philosofy__pattern:nth-child(2) {
+        right: -50px;
+        bottom: -35px;
+    }
+    .philosofy__pattern:nth-child(1) {
+        top: -35px;
+    }
+    .philosofy__pattern {
+        width: 100px;
+        height: 100px;
+    }
+    .philosofy {
+        padding: 49px 0 90px;
+    }
+    .philosofy__content-text {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .philosofy__content-title {
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 10px;
+    }
+    .philosofy__content {
+        padding: 40px 15px;
+    }
+    .about {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .offers {
+        margin-bottom: 80px;
+    }
+    .info__title {
+        font-size: 23px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    .info__pretitle {
+        font-size: 10px;
+        line-height: 14px;
+        margin-bottom: 20px;
+    }
+    .info__item {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 15px;
+    }
+    .info {
+        padding-bottom: 50px;
+    }
+    .gallery {
+        padding-bottom: 60px;
+    }
+    .gallery__pattern:nth-child(2) {
+        width: 148px;
+        height: 148px;
+        right: -27px;
+        bottom: -25px;
+    }
+    .gallery__pattern:nth-child(1) {
+        width: 130px;
+        height: 130px;
+        left: -30px;
+        top: -25px;
+    }
+    .gallery__title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .gallery__text {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 25px;
+    }
+    .products {
+        padding-bottom: 100px;
+    }
+    .quote {
+        padding-bottom: 100px;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .quote__inner {
+        background-size: 50%;
+    }
+    .quote .soclist__item svg {
+        width: 22px;
+        height: 22px;
+    }
+    .quote__text {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 15px;
+    }
+    .quote__title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 5px;
+    }
+    .offers {
+        .offers__item-img {
+            order: 1;
+        }
+        .offers__item-content {
+            order: 2;
+            width: 80%;
+            margin-right: 0;
+            margin-top: 50px;
+        }
+        .offers__item {
+            flex-direction: column;
+        }
+        .swiper-wrapper {
+            margin-left: 0px;
+        }
+    }
     .cart__product-counter {
         font-size: 18px;
         line-height: 22px;
@@ -1205,34 +1337,6 @@
     .blog {
         padding-bottom: 70px;
     }
-    // .blog .blog__item {
-    //     height: 329px;
-    //     border-bottom: 4px solid $gold !important;
-    //     .blog__content {
-    //         height: 45% !important;
-    //         background-color: transparent;
-    //     }
-    //     .blog__item-img {
-    //         height: 100% !important;
-    //     }
-    //     .blog__item-title {
-    //         color: #fff;
-    //     }
-    //     .blog__item-text {
-    //         color: rgba(#fff, 0.75);
-    //     }
-    //     .blog__item-date {
-    //         opacity: 1;
-    //     }
-    //     .blog__item-btn {
-    //         opacity: 1;
-    //     }
-    //     &.wrapper {
-    //         &::after {
-    //             opacity: 1 !important;
-    //         }
-    //     }
-    // }
     .blog .blog__item {
         height: 329px;
         border-bottom: 4px solid $gold !important;
@@ -1344,17 +1448,6 @@
     .post {
         margin-bottom: 60px;
     }
-    .offers {
-        padding-bottom: 220px;
-    }
-    .offers__title {
-        font-size: 33px;
-        line-height: 47px;
-        margin-bottom: 80px;
-        &.title-line::after {
-            width: 130px;
-        }
-    }
     .top__title {
         width: 100%;
         text-align: center;
@@ -1364,13 +1457,6 @@
     }
     .companies__item:nth-child(3) {
         display: none;
-    }
-    .philosofy__pattern:nth-child(1) {
-        top: -75px;
-    }
-    .philosofy__pattern:nth-child(2) {
-        right: -70px;
-        bottom: -75px;
     }
     .about__design::before {
         width: 135px;
@@ -1425,6 +1511,30 @@
 
 //Max-Width: 460px ================================
 @media (max-width: 460px) {
+    .offers {
+        .offers__item-img {
+            width: 165px;
+            height: 214px;
+        }
+        .offers__img-before {
+            width: 150px;
+            height: 150px;
+            right: 50%;
+            top: 40%;
+            transform: translate(50%, -50%);
+        }
+        .offers__item-content {
+            width: 100%;
+            margin-right: 0;
+            margin-top: 35px;
+        }
+        .offers__item {
+            flex-direction: column;
+        }
+        .swiper-wrapper {
+            margin-left: 0px;
+        }
+    }
     .post--single .tags {
         margin-top: 15px;
         margin-bottom: 0px;
@@ -1591,7 +1701,7 @@
             "block-4 block-4"
             "block-5 block-5"
             "block-6 block-6";
-        grid-template-rows: 0 250px repeat(4, 250px) 250px 0;
+        grid-template-rows: 0 130px repeat(4, 129px) 130px 0;
         grid-template-columns: repeat(2, 49%);
     }
     .top__title {
@@ -1641,6 +1751,10 @@
 
 //Max-Width: 400px ================================
 @media (max-width: 400px) {
+    .quote {
+        padding-bottom: 90px;
+        width: 100%;
+    }
     .cart__bill span {
         margin-left: 5px;
         font-weight: 700;
@@ -1683,19 +1797,6 @@
         height: 40px;
         border: 8px solid #a99260;
     }
-    .about__content-title {
-        font-size: 23px;
-        line-height: 28px;
-    }
-    .about__content-text {
-        font-size: 16px;
-        margin-bottom: 40px;
-        line-height: 25px;
-    }
-    .about__content-btn {
-        font-size: 14px;
-        padding: 5px 20px;
-    }
     .about__design-img {
         width: 240px;
         height: 240px;
@@ -1710,14 +1811,6 @@
         &.title-line::after {
             width: 90px;
         }
-    }
-    .quote__title {
-        font-size: 34px;
-        line-height: 30px;
-    }
-    .quote__text {
-        font-size: 20px;
-        line-height: 25px;
     }
     .post--single {
         .post__info {
