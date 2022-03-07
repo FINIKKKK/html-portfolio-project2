@@ -162,13 +162,14 @@ section {
         margin-right: 8px;
     }
     .star {
-        svg path{
-            fill: $black;
+        svg{
+            fill: #fff;
         }
     }
     .star--not {
-        g path:nth-child(1) {
-            fill: rgba(0, 0, 0, 0);
+        svg {
+            fill: transparent;
+            stroke: #fff;
         }
     }
 }

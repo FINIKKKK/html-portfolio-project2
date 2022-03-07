@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 @@include('./blocks/main/_head.html', {
 "title": "Корзина",
@@ -26,18 +26,24 @@
 
                 <div class="cart__products-inner">
                     <table class="cart__products">
-                        <tr class="cart__product">
+                        <tr class="cart__product wow animate__animated animate__fadeInUp">
                             <td class="cart__product-img">
                                 <a href="product.html">
-                                    <img src="./img/products/product-1.jpg" width="105" height="174" loading="lazy" alt="product" title="Майка | Whether">
+                                    <img src="./img/products/product-1.jpg" width="105" height="174" loading="lazy" alt="product" title="Майка | Whether" title-en="Undershirt | Whether">
                                 </a>
                             </td>
                             <td class="cart__product-name">
-                                <p class="cart__product-category">Майка</p>
-                                <h6 class="cart__product-title">Whether</h6>
+                                <p class="cart__product-category">
+                                    Майка
+                                    <!--{en}Undershirt-->
+                                </p>
+                                <h6 class="cart__product-title">
+                                    Whether
+                                    <!--{en}WhetherWhether-->
+                                </h6>
                             </td>
                             <td class="cart__product-counter">
-                                <button class="cart__counter-btn cart__counter--minus">-</button>
+                                <button class="cart__counter-btn cart__counter--minus disabled">-</button>
                                 <input type="number" class="cart__counter-number" min='1' max='9' value='1'>
                                 <button class="cart__counter-btn cart__counter--plus">+</button>
                             </td>
@@ -50,18 +56,24 @@
                                 </button>
                             </td>
                         </tr>
-                        <tr class="cart__product">
+                        <tr class="cart__product wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
                             <td class="cart__product-img">
                                 <a href="product.html">
-                                    <img src="./img/products/product-2.jpg" width="105" height="174" loading="lazy" alt="product" title="Футболка | LoveLife">
+                                    <img src="./img/products/product-2.jpg" width="105" height="174" loading="lazy" alt="product" title="Футболка | LoveLife" title-en="T-shirt | Whether">
                                 </a>
                             </td>
                             <td class="cart__product-name">
-                                <p class="cart__product-category">Футболка</p>
-                                <h6 class="cart__product-title">LoveLife</h6>
+                                <p class="cart__product-category">
+                                    Футболка
+                                    <!--{en}T-shirt-->
+                                </p>
+                                <h6 class="cart__product-title">
+                                    LoveLife
+                                    <!--{en}LoveLife-->
+                                </h6>
                             </td>
                             <td class="cart__product-counter">
-                                <button class="cart__counter-btn cart__counter--minus">-</button>
+                                <button class="cart__counter-btn cart__counter--minus disabled">-</button>
                                 <input type="number" class="cart__counter-number" min='1' max='9' value='1'>
                                 <button class="cart__counter-btn cart__counter--plus">+</button>
                             </td>
@@ -76,22 +88,32 @@
                         </tr>
                     </table>
                     <div class="cart__bill">
-                        Общая сумма: <span class="cart__bill-sum">41.0</span>
+                        Общая сумма:
+                        <!--{en}Total amount:--><span class="cart__bill-sum">41.0</span>
                     </div>
 
-                    <div class="cart-empty">
+                    <div class="cart-empty wow animate__animated animate__fadeInUp">
                         <div class="cart-empty__icon">
                             <svg width="20" height="20">
                                 <use xlink:href="./img/icons/icons.svg#cart2" />
                             </svg>
                         </div>
-                        <p class="cart-empty__text">Ваша корзина пустая</p>
-                        <a href="shop.html" class="cart-empty__btn btn">Вернуться в Магазин</a>
+                        <p class="cart-empty__text">
+                            Ваша корзина пустая
+                            <!--{en}Your cart is empty-->
+                        </p>
+                        <a href="shop.html" class="cart-empty__btn btn">
+                            Вернуться в Магазин
+                            <!--{en}Return to Shop-->
+                        </a>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h4 class="card__title">Детали Карты</h4>
+                    <h4 class="card__title">
+                        Детали карты
+                        <!--{en}Card details-->
+                    </h4>
 
                     <div class="card__example">
                         <div class="card__example-name">Карта</div>
@@ -156,106 +178,99 @@
     <section class="similar">
         <div class="container">
             <div class="similar__inner">
-                <h2 class="similar__title title-line">Похожые товары</h2>
-                <div class="swiper products__items">
+                <h2 class="similar__title title-line wow animate__animated animate__fadeInUp">
+                    Похожие товары
+                    <!--{en}Similar products-->
+                </h2>
+                <div class="swiper products__items products__slider">
                     <div class="swiper-wrapper">
-                        @@include('./blocks/_product.html', {
-                        "img": "./img/products/product-1.jpg",
-                        "category": "Майка",
-                        "name": "Whether",
-                        "price": "17.00",
-                        //---//
-                        "star1": "",
-                        "star2": "",
-                        "star3": "",
-                        "star4": "",
-                        "star5": "star--not",
-                        "swiper": "swiper-slide",
-                        })
+                        <div class="products__item wrapper swiper-slide wow animate__animated animate__fadeInUp">
+                            @@include('./blocks/_product.html', {
+                            "img": "./img/products/product-1.jpg",
+                            "category": "Майка",
+                            "category-en": "Undershirt",
+                            "name": "Whether",
+                            "name-en": "Whether",
+                            "price": "17.00",
+                            })
+                        </div>
 
-                        @@include('./blocks/_product.html', {
-                        "img": "./img/products/product-2.jpg",
-                        "category": "Футболка",
-                        "name": "LoveLife",
-                        "price": "24.00",
-                        //---//
-                        "star1": "",
-                        "star2": "",
-                        "star3": "",
-                        "star4": "",
-                        "star5": "",
-                        "swiper": "swiper-slide",
-                        })
+                        <div class="products__item wrapper swiper-slide wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                            @@include('./blocks/_product.html', {
+                            "img": "./img/products/product-2.jpg",
+                            "category": "Футболка",
+                            "category-en": "T-shirt",
+                            "name": "LoveLife",
+                            "name-en": "LoveLife",
+                            "price": "24.00",
+                            })
+                        </div>
 
-                        @@include('./blocks/_product.html', {
-                        "img": "./img/products/product-3.jpg",
-                        "category": "Футболка",
-                        "name": "Wrastler",
-                        "price": "21.99",
-                        //---//
-                        "star1": "",
-                        "star2": "",
-                        "star3": "",
-                        "star4": "star--not",
-                        "star5": "star--not",
-                        "swiper": "swiper-slide",
-                        })
+                        <div class="products__item wrapper swiper-slide wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                            @@include('./blocks/_product.html', {
+                            "img": "./img/products/product-3.jpg",
+                            "category": "Футболка",
+                            "category-en": "T-shirt",
+                            "name": "Wrastler",
+                            "name-en": "Wrastler",
+                            "price": "21.99",
+                            })
+                        </div>
 
-                        @@include('./blocks/_product.html', {
-                        "img": "./img/products/product-4.jpg",
-                        "category": "Рубашка",
-                        "name": "Merris",
-                        "price": "32.99",
-                        //---//
-                        "star1": "",
-                        "star2": "",
-                        "star3": "",
-                        "star4": "",
-                        "star5": "star--not",
-                        "swiper": "swiper-slide",
-                        })
+                        <div class="products__item wrapper swiper-slide wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                            @@include('./blocks/_product.html', {
+                            "img": "./img/products/product-4.jpg",
+                            "category": "Рубашка",
+                            "category-en": "Shirt",
+                            "name": "Merris",
+                            "name-en": "Merris",
+                            "price": "32.99",
+                            })
+                        </div>
 
-                        @@include('./blocks/_product.html', {
-                        "img": "./img/products/product-1.jpg",
-                        "category": "Майка",
-                        "name": "Whether",
-                        "price": "17.00",
-                        //---//
-                        "star1": "",
-                        "star2": "",
-                        "star3": "",
-                        "star4": "",
-                        "star5": "star--not",
-                        "swiper": "swiper-slide",
-                        })
+                        <div class="products__item wrapper swiper-slide wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                            @@include('./blocks/_product.html', {
+                            "img": "./img/products/product-1.jpg",
+                            "category": "Майка",
+                            "category-en": "Undershirt",
+                            "name": "Whether",
+                            "name-en": "Whether",
+                            "price": "17.00",
+                            })
+                        </div>
 
-                        @@include('./blocks/_product.html', {
-                        "img": "./img/products/product-2.jpg",
-                        "category": "Футболка",
-                        "name": "LoveLife",
-                        "price": "24.00",
-                        //---//
-                        "star1": "",
-                        "star2": "",
-                        "star3": "",
-                        "star4": "",
-                        "star5": "",
-                        "swiper": "swiper-slide",
-                        })
+                        <div class="products__item wrapper swiper-slide">
+                            @@include('./blocks/_product.html', {
+                            "img": "./img/products/product-2.jpg",
+                            "category": "Футболка",
+                            "category-en": "T-shirt",
+                            "name": "LoveLife",
+                            "name-en": "LoveLife",
+                            "price": "24.00",
+                            })
+                        </div>
 
-                        @@include('./blocks/_product.html', {
-                        "img": "./img/products/product-3.jpg",
-                        "category": "Футболка",
-                        "name": "Wrastler",
-                        "price": "21.99",
-                        //---//
-                        "star1": "",
-                        "star2": "",
-                        "star3": "",
-                        "star4": "star--not",
-                        "star5": "star--not",
-                        "swiper": "swiper-slide",
-                        })
+                        <div class="products__item wrapper swiper-slide">
+                            @@include('./blocks/_product.html', {
+                            "img": "./img/products/product-3.jpg",
+                            "category": "Футболка",
+                            "category-en": "T-shirt",
+                            "name": "Wrastler",
+                            "name-en": "Wrastler",
+                            "price": "21.99",
+                            })
+                        </div>
+
+                        <div class="products__item wrapper swiper-slide">
+                            @@include('./blocks/_product.html', {
+                            "img": "./img/products/product-4.jpg",
+                            "category": "Рубашка",
+                            "category-en": "Shirt",
+                            "name": "Merris",
+                            "name-en": "Merris",
+                            "price": "32.99",
+                            })
+                        </div>
                     </div>
 
                     <div class="swiper-pagination"></div>

@@ -163,7 +163,10 @@ const offersSwiper = new Swiper('.offers__items', {
     slidesPerView: 1,
     // spaceBetween: 30,
     // loop: true,
-    // effect: "fade",
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
     navigation: {
         nextEl: '.next',
         prevEl: '.prev',
@@ -182,15 +185,44 @@ const offersSwiper = new Swiper('.offers__items', {
 //     });
 // });
 
-const productsSwiper = new Swiper('.products__items', {
-    slidesPerView: 4,
+const productsSwiper = new Swiper('.products__slider', {
+    slidesPerView: 5,
     spaceBetween: 30,
-    loop: false,
+    loop: true,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
     },
+    autoplay: {
+        enabled: false,
+        delay: 5000,
+        disableOnInteraction: true,
+    },
+    breakpoints: {
+        950: {
+            slidesPerView: 5,
+        },
+        750: {
+            slidesPerView: 4,
+        },
+        550: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+        },
+        0: {
+            centeredSlides: true,
+        },
+    },
 });
+// Запуск Аutoplay только когда пользователь вошел в область видимости
+$(window).scroll(function () {
+    $('.similar').each(function () {
+        if ($(window).scrollTop() + $(window).height() >= $(this).position().top && $(window).scrollTop() < $(this).position().top + $(this).height()) {
+            productsSwiper.autoplay.start();
+        }
+    });
+});
+
 
 
 
@@ -228,35 +260,24 @@ $(".cart__counter--plus").click(function () {
     var count = $(this).parent().find(".cart__counter-number").val();
     $(this).parent().find(".cart__counter-number").val(++count);
 
-    // if (count === 9) {
-    //     $(this).toggleClass('disabled');
-    // } else {
-    //     $(this).removeClass('disabled');
-    // }
-    // if (count < 9) {
-    // }
-    console.log(count)
-    // const checkCount = () => {
     if (count === 10 || count === 1) {
         $(this).addClass('disabled');
     } else {
-        $(this).removeClass('disabled');
+        $(this).parent().find(".cart__counter-btn").removeClass('disabled');
     }
-    // }
-    // checkCount();
+    console.log(count)
 });
 $(".cart__counter--minus").click(function () {
     var count = $(this).parent().find(".cart__counter-number").val();
-    // if (count > 1) {
     $(this).parent().find(".cart__counter-number").val(--count);
-    // }
+
+
     if (count === 10 || count === 1) {
         $(this).addClass('disabled');
     } else {
-        $(this).removeClass('disabled');
+        $(this).parent().find(".cart__counter-btn").removeClass('disabled');
     }
 });
-
 
 $('.cart__product-btn').click(function () {
     $(this).parents('.cart__product').remove();
@@ -447,9 +468,9 @@ $(document).ready(function () {
         $(".error").remove();
         $(".input").removeClass('input-error');
 
-        // setTimeout(function () {
-        //     $('.error').remove();
-        // }, 5000);
+        setTimeout(function () {
+            $('.error').remove();
+        }, 5000);
 
         if (name.length < 1) {
             $('#contact__form-name').addClass('input-error');
