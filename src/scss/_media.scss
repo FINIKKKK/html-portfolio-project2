@@ -47,6 +47,12 @@
 
 //Max-Width: 1100px ================================
 @media (max-width: 1100px) {
+    .offers {
+        .btn_like::before {
+            top: 48%;
+            left: 11%;
+        }
+    }
     .blog__items {
         justify-content: center;
     }
@@ -81,6 +87,12 @@
 
 //Max-Width: 1000px ================================
 @media (max-width: 1000px) {
+    .offers {
+        .btn_like::before {
+            top: 48%;
+            left: 9%;
+        }
+    }
     .cart__inner {
         padding-right: 0;
         display: block;
@@ -233,6 +245,12 @@
 
 //Max-Width: 900px ================================
 @media (max-width: 900px) {
+    .offers {
+        .btn_like::before {
+            top: 48%;
+            left: 7%;
+        }
+    }
     .header {
         .hamburger {
             display: flex;
@@ -346,6 +364,25 @@
 
 //Max-Width: 800px ================================
 @media (max-width: 800px) {
+    .offers {
+        .btn_like::before {
+            top: 48%;
+            left: 3%;
+        }
+    }
+    .companies {
+        height: 115px;
+        .js-marquee {
+            margin-right: 70px !important;
+        }
+    }
+    .companies__item:not(:last-child) {
+        margin-right: 70px;
+    }
+    .companies__item {
+        width: 90px;
+        height: 73px;
+    }
     .blog__item-title {
         width: 70%;
     }
@@ -556,6 +593,13 @@
 //Max-Width: 700px ================================
 @media (max-width: 700px) {
     .offers {
+        .btn_like::before {
+            transform: scale(0.5);
+            top: 37%;
+            left: 3%;
+        }
+    }
+    .offers {
         .offers__title {
             margin-top: -130px;
             font-size: 30px;
@@ -665,12 +709,6 @@
         bottom: -115px;
         z-index: -1;
     }
-    .companies__item {
-        margin: 0 20px;
-    }
-    .companies__list {
-        margin: 0;
-    }
     .philosofy__img {
         display: none;
     }
@@ -755,6 +793,12 @@
 
 //Max-Width: 600px ================================
 @media (max-width: 600px) {
+    .offers {
+        .btn_like::before {
+            top: 37%;
+            left: -1%;
+        }
+    }
     .offers {
         .swiper-wrapper {
             margin-left: -35px;
@@ -876,6 +920,15 @@
 
 //Max-Width: 550px ================================
 @media (max-width: 550px) {
+    .companies {
+        height: 115px;
+        .js-marquee {
+            margin-right: 35px !important;
+        }
+    }
+    .companies__item:not(:last-child) {
+        margin-right: 35px;
+    }
     .similar__title {
         margin-bottom: 20px;
         font-size: 26px;
@@ -1138,6 +1191,16 @@
 
 //Max-Width: 500px ================================
 @media (max-width: 500px) {
+    .offers {
+        .btn_like {
+            position: relative;
+        }
+        .btn_like::before {
+            top: auto;
+            bottom: -110px;
+            left: -70px;
+        }
+    }
     .about__content-btn {
         font-size: 12px;
         line-height: 14px;
@@ -1511,6 +1574,14 @@
 
 //Max-Width: 460px ================================
 @media (max-width: 460px) {
+    .companies {
+        padding-top: 10px;
+        height: 80px;
+    }
+    .companies__item {
+        width: 70px;
+        height: 56px;
+    }
     .offers {
         .offers__item-img {
             width: 165px;

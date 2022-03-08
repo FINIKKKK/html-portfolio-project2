@@ -333,7 +333,7 @@ $(document).ready(function () {
 });
 
 
-$('.products__add-cart').click(function () {
+$('.products__add-cart, .btn__add').click(function () {
     $(this).toggleClass('btn_like');
 });
 
@@ -412,10 +412,48 @@ $(document).ready(function () {
 
 
 
-$(function() {
+$(function () {
     $('.companies__inner').marquee({
-      duration: 7000,
-      startVisible: true,
-      duplicated: true
+        duration: 30000,
+        startVisible: true,
+        duplicated: true
     });
-  });
+});
+
+
+
+var swiperThing2 = new Swiper(".thing__slider2", {
+    spaceBetween: 15,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+    navigation: {
+        nextEl: ".next",
+        prevEl: ".prev",
+    },
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+});
+var swiperThing = new Swiper(".thing__slider", {
+    spaceBetween: 30,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+    thumbs: {
+        swiper: swiperThing2,
+    },
+});
+
+
+
+
+$('.thing__sizes-item').click(function () {
+    $(this).toggleClass('active');
+});

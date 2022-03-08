@@ -8,6 +8,7 @@ $white: rgba(255, 255, 255, 0.75);
 // ------- Global-Tags --------
 html {
     box-sizing: border-box;
+    overflow-x: hidden;
     &.hidden {
         overflow-y: hidden;
     }

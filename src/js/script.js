@@ -29,6 +29,7 @@
 @@include('../../node_modules/swiper/swiper-bundle.min.js');
 @@include('../../node_modules/wowjs/dist/wow.min.js');
 @@include('../../node_modules/translater.js/dist/translater.min.js');
+@@include('../../node_modules/jquery.marquee/jquery.marquee.min.js');
 
 // Main-JS -----------------
 @@include('./main.js');
