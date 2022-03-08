@@ -1,16 +1,3 @@
-// --- Header-Mini при скролле
-$(window).scroll(() => {
-    var windowTop = $(window).scrollTop();
-    windowTop > 200 ? $('.header').addClass('header-mini') : $('.header').removeClass('header-mini');
-});
-if ($(window).scrollTop() > 200) {
-    $('.header').addClass('header-mini')
-} else {
-    $('.header').removeClass('header-mini');
-}
-
-
-
 // --- Scroll к Якорям
 $("body").on('click', '[href*="#"]', function (e) {
     var fixed_offset = 100;
@@ -115,13 +102,19 @@ $(window).scroll(function () {
 
 
 // --- Закрытие списка при скролле 
+// $(window).scroll(function () {
+//     var box1 = $('.header').offset().top;
+//     /*Если сделали скролл на 100px задаём новый класс для header*/
+//     if (box1 > 100) {
+//         $('.simple-select').removeClass('open');
+//     }
+// });
+// --- Закрытие списка при скролле 
 $(window).scroll(function () {
-    var box1 = $('.header').offset().top;
-    /*Если сделали скролл на 100px задаём новый класс для header*/
-    if (box1 > 100) {
-        $('.simple-select').removeClass('open');
-    }
+    $('.simple-select').removeClass('open');
+    $('.search').removeClass('active');
 });
+
 
 
 
@@ -456,4 +449,21 @@ var swiperThing = new Swiper(".thing__slider", {
 
 $('.thing__sizes-item').click(function () {
     $(this).toggleClass('active');
+});
+
+
+$('.search').click(function () {
+    $(this).addClass('active');
+});
+
+$('.search svg').click(function () {
+    if ($('.search').hasClass('active')) {
+        location.href = 'single-product.html';
+    }
+});
+
+$('.search input').keydown(function (e  ) {
+    if (e.keyCode === 13) {
+        location.href = 'single-product.html';
+    }
 });

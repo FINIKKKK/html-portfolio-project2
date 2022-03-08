@@ -7,16 +7,21 @@
 
 <body>
 
-    @@include('./blocks/main/_header.html')
-
-
-    @@include('./blocks/_first-screen.html', {
-    "title": "Блог",
+    @@include('./blocks/main/_header.html', {
+    "class": "header-black",
+    //////
+    "home": "",
+    "shop": "",
+    "about": "",
+    "blog": "active",
+    "contacts": "",
     })
 
 
     @@include('./blocks/_info-nav.html', {
-    "title": "Блог",
+    "title": "Главная / Блог",
+    "title-en": "Main / Blog",
+    "class": "info-nav--other",
     })
 
 

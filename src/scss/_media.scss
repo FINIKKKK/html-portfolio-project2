@@ -252,8 +252,8 @@
         }
     }
     .header {
-        .hamburger {
-            display: flex;
+        .hamburger__btn {
+            display: block;
         }
         .menu {
             position: relative;
@@ -1191,6 +1191,9 @@
 
 //Max-Width: 500px ================================
 @media (max-width: 500px) {
+    .first-screen {
+        height: 50vh;
+    }
     .offers {
         .btn_like {
             position: relative;
@@ -1814,9 +1817,15 @@
     .info__item {
         text-align: left;
     }
+    .first-screen {
+        height: 45vh;
+    }
+    .first-screen__inner {
+        height: 55vh;
+    }
     .first-screen__title {
-        font-size: 46px;
-        line-height: 60px;
+        font-size: 40px;
+        line-height: 55px;
     }
 }
 

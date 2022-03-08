@@ -1,11 +1,10 @@
 // --------- header ----------
 .header {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 80px;
     z-index: 200;
-    padding: 0 15px;
-    padding-top: 10px;
+    padding-top: 25px;
     transition: padding 0.3s, height 0.3s, background-color 0.3s;
     .menu {
         display: flex;
@@ -15,38 +14,45 @@
     .menu__list {
         display: flex;
         align-items: center;
+        margin-right: 75px;
         a {
             color: #fff;
         }
     }
     .menu__list-item {
         position: relative;
-        &::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 1px;
-            top: 50%;
-            left: -3px;
-            transform: translateY(-50%);
-            background-color: #fff;
-            transition: 0.2s ease-out;
-            pointer-events: none;
+        font-size: 12px;
+        line-height: 14px;
+        a {
+            transition: 0.2s;
+            color: rgba(#fff, 0.85);
         }
         &:hover {
-            &::after {
-                width: 110%;
-            }
+            color: rgba(#fff, 1);
         }
         &.active {
+            pointer-events: none;
+            a {
+                color: #fff;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 90%;
+                height: 1.5px;
+                bottom: -8px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(#fff, 0.65);
+            }
         }
     }
     .menu__list-item:not(:last-child) {
-        margin-right: 35px;
+        margin-right: 45px;
     }
     .logo svg {
-        width: 55px;
-        height: 55px;
+        width: 40px;
+        height: 40px;
         margin-bottom: 3px;
         margin-right: 0px;
         transition: fill 0.2s;
@@ -56,46 +62,171 @@
         display: flex;
         align-items: center;
     }
+    .menu__content {
+        display: flex;
+        align-items: center;
+    }
+    .header__content-btn:not(:last-child) {
+        margin-right: 20px;
+    }
+    .header__content-btn {
+        border-radius: 50%;
+        background-color: rgba(#fff, 0.25);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        cursor: pointer;
+        svg {
+            width: 15px;
+            height: 15px;
+            fill: rgba(#fff, 0.85);
+            transition: 0.3s;
+        }
+        &:hover {
+            background-color: #fff;
+            svg {
+                fill: $black;
+            }
+        }
+    }
+    .search {
+        input {
+            width: 0px;
+            transition: 0.3s;
+            border-bottom: 1px solid ttransparent;
+        }
+        svg {
+            margin-left: -2px;
+        }
+        &.active {
+            border-radius: 5px;
+            input {
+                margin-right: 15px;
+                width: 70%;
+                border-bottom: 1px solid rgba(#fff, 0.25);
+                color: rgba(#fff, 0.85);
+                font-size: 16px;
+                line-height: 18px;
+                font-weight: 300;
+            }
+            width: 150px;
+            &:hover {
+                background-color: rgba(#fff, 0.25);
+                svg {
+                    fill: rgba(#fff, 0.85);
+                }
+            }
+        }
+    }
+    .simple-select {
+        user-select: none;
+        cursor: pointer;
+        width: auto;
+        font-size: 14px;
+        line-height: 16px;
+        &.open {
+            span {
+                background-color: #fff;
+                color: $black !important;
+            }
+        }
+    }
+    .simple-select ul {
+        top: 35px;
+    }
+    .simple-select ul li a {
+        padding: 5px 12px;
+    }
+    .simple-select > span {
+        border-radius: 50%;
+        background-color: rgba(#fff, 0.25);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: 700;
+        padding: 9px 16px;
+        color: rgba(#fff, 0.85) !important;
+        border: none;
+        transition: 0.3s;
+        &::before,
+        &::after {
+            display: none;
+        }
+        &:hover {
+            background-color: #fff;
+            color: $black !important;
+        }
+    }
     .cart__icon {
         position: relative;
         span {
             position: absolute;
-            right: -3px;
-            bottom: -3px;
-            color: $gold;
+            right: -2px;
+            bottom: -2px;
+            color: rgba(#fff, 0.85);
             border-radius: 50%;
-            background-color: #fff;
-            width: 18px;
-            height: 18px;
+            background-color: rgba(#fff, 0.25);
+            width: 15px;
+            height: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 10px;
-            line-height: 13px;
-            transition: background-color 0.2s;
+            font-size: 8px;
+            line-height: 8px;
+            transition: 0.3s;
+            border: 1px solid rgba(#fff, 0.85);
         }
         path {
             transition: fill 0.3s;
         }
+        svg {
+            width: 17px;
+            height: 17px;
+        }
     }
     .cart__icon:hover {
-        svg path:nth-child(1) {
-            fill: rgba($gold, 1);
+        svg path:nth-child(2) {
+            fill: rgba($black, 1);
+        }
+        span {
+            background-color: rgba(#fff, 1);
+            color: #000;
+            border-color: $black;
+            font-weight: 700;
+        }
+    }
+    .hamburger__btn {
+        display: none;
+        margin-left: 20px;
+        &:hover {
+            .hamburger .hamburger__line {
+                background-color: $black;
+            }
         }
     }
     .hamburger {
-        display: none;
+        display: flex;
         background-color: transparent;
-        width: 50px;
-        height: 25px;
+        width: 22px;
+        height: 17px;
         flex-direction: column;
         justify-content: space-between;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
     .hamburger .hamburger__line {
-        width: 40px;
+        width: 18px;
         height: 1px;
         background-color: #fff;
+        transition: 0.3s;
     }
     .hamburger .hamburger__line:nth-child(2) {
         margin-left: auto;
@@ -103,19 +234,40 @@
     }
     .hamburger__line:nth-child(1),
     .hamburger__line:nth-child(3) {
-        transition: transform 0.45s;
+        transition: 0.45s;
     }
     &.header-black {
-        height: 60px;
-        padding: 0 15px;
-        padding-top: 10px;
-        .menu {
-            height: 60px;
-            align-content: center;
-        }
+        position: relative;
+        height: 80px;
+        padding-top: 17px;
         .logo {
-            path {
+            svg {
                 fill: $black;
+            }
+        }
+        .menu__list-item {
+            a {
+                color: rgba($black, 0.85);
+            }
+            &.active {
+                a {
+                    color: $black;
+                }
+                &::after {
+                    background-color: rgba($black, 0.65);
+                }
+            }
+        }
+        .header__content-btn {
+            background-color: rgba($black, 0.25);
+            svg {
+                fill: rgba($black, 0.85);
+            }
+            &:hover {
+                background-color: $black;
+                svg {
+                    fill: #fff;
+                }
             }
         }
         .cart__icon {
@@ -126,40 +278,58 @@
                 background-color: rgb(37, 37, 37);
                 color: #fff;
             }
-        }
-        .hamburger {
-            .hamburger__line {
-                background-color: $black;
+            &:hover {
+                svg path:nth-child(2) {
+                    fill: rgba(#fff, 1);
+                }
             }
         }
-    }
-    &.header-mini {
-        background-color: #fff;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-        height: 60px;
-        padding-top: 0;
-        .logo svg {
-            fill: $black;
+        .search {
+            &.active {
+                input {
+                    border-bottom: 1px solid rgba($black, 0.25);
+                    color: rgba($black, 0.85);
+                }
+                &:hover {
+                    background-color: rgba($black, 0.25);
+                    svg {
+                        fill: rgba($black, 0.85);
+                    }
+                }
+            }
         }
-        .menu__list-item {
-            &::after {
+        .simple-select > span {
+            color: rgba($black, 0.85) !important;
+            background-color: rgba($black, 0.25);
+            &:hover {
+                background-color: $black;
+                color: #fff !important;
+            }
+        }
+        .simple-select {
+            &.open {
+                span {
+                    background-color: $black;
+                    color: #fff !important;
+                }
+            }
+            ul {
+                top: 35px;
                 background-color: $black;
             }
             a {
-                color: $black;
-            }
-        }
-        .cart__icon {
-            path:nth-child(2) {
-                fill: $black;
-            }
-            span {
-                background-color: $black;
                 color: #fff;
             }
         }
-        .hamburger__line {
-            background-color: $black;
+        .hamburger__btn {
+            .hamburger__line {
+                background-color: rgba($black, 0.75);
+            }
+            &:hover {
+                .hamburger__line {
+                    background-color: rgba(#fff, 1);
+                } 
+            }
         }
     }
     @mixin transition {
@@ -233,6 +403,7 @@
         height: 100vh;
     }
     &__title {
+        display: none;
         width: 780px;
         font-weight: 300;
         font-size: 100px;
@@ -257,6 +428,7 @@
         z-index: -1;
     }
     &__soclist {
+        display: none;
         flex-direction: column;
         align-items: center;
         position: absolute;
@@ -1141,16 +1313,14 @@
     width: 100%;
     z-index: 100;
     &__text {
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 14px;
+        line-height: 18px;
     }
     &.info-nav--other {
         background: #f3f3f3;
         color: $black;
         margin-top: 0px;
         position: relative;
-        top: 80px;
-        margin-bottom: 60px;
     }
 }
 
