@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 @@include('./blocks/main/_head.html', {
 "title": "Корзина",
@@ -35,7 +35,7 @@
                     <table class="cart__products">
                         <tr class="cart__product wow animate__animated animate__fadeInUp">
                             <td class="cart__product-img">
-                                <a href="product.html">
+                                <a href="single-product.html">
                                     <img src="./img/products/product-1.jpg" width="105" height="174" loading="lazy" alt="product" title="Майка | Whether" title-en="Undershirt | Whether">
                                 </a>
                             </td>
@@ -46,7 +46,7 @@
                                 </p>
                                 <h6 class="cart__product-title">
                                     Whether
-                                    <!--{en}WhetherWhether-->
+                                    <!--{en}Whether-->
                                 </h6>
                             </td>
                             <td class="cart__product-counter">
@@ -65,7 +65,7 @@
                         </tr>
                         <tr class="cart__product wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
                             <td class="cart__product-img">
-                                <a href="product.html">
+                                <a href="single-product.html">
                                     <img src="./img/products/product-2.jpg" width="105" height="174" loading="lazy" alt="product" title="Футболка | LoveLife" title-en="T-shirt | Whether">
                                 </a>
                             </td>
@@ -123,7 +123,10 @@
                     </h4>
 
                     <div class="card__example">
-                        <div class="card__example-name">Карта</div>
+                        <div class="card__example-name">
+                            Карта
+                            <!--{en}Card-->
+                        </div>
                         <div class="card__example-numbers">
                             <div class="card__example-num">....</div>
                             <div class="card__example-num">....</div>
@@ -133,45 +136,60 @@
                         <div class="card__example-flex">
                             <div class="card__example-info">
                                 <div class="card__example-date">12/20</div>
-                                <div class="card__example-person">Имя / Фамилия</div>
+                                <div class="card__example-person">
+                                    Имя / Фамилия
+                                    <!--{en}First / Last Name-->
+                                </div>
                             </div>
                             <img src="./img/card--visa.png" width="91" height="28" loading="lazy" alt="visa">
                         </div>
                     </div>
 
-                    <div class="card__input-block card__input-name">
-                        <label for="" class="card__label">Имя на карте</label>
-                        <input type="text" class="card__input" placeholder="Имя / Фамилия">
-                    </div>
-                    <div class="card__input-block card__input-numeral">
-                        <label for="" class="card__label">Номер карты</label>
-                        <div class="card__input-numbers">
-                            <input type="text" class="card__input" placeholder="....">
-                            <input type="text" class="card__input" placeholder="....">
-                            <input type="text" class="card__input" placeholder="....">
-                            <input type="text" class="card__input" placeholder="....">
-                        </div>
-                    </div>
-                    <div class="card__input-block card__input-data">
-                        <div class="card__date">
-                            <label for="" class="card__label">Дата</label>
-                            <div class="card__date-selects">
-                                <select class="card__select select">
-                                    <option class="card__option option">mm</option>
-                                    <option class="card__option option">mm</option>
-                                </select>
-                                <select class="card__select select">
-                                    <option class="card__option option">yyyy</option>
-                                    <option class="card__option option">yyyy</option>
-                                </select>
+                    <form id="card__form" class="card__form">
+
+                        <div class="card__input-block card__input-name">
+                            <label for="card__input-name" class="card__label">
+                                Имя на карте
+                                <!--{en}Name on the card-->
+                            </label>
+                            <div class="card__input input-block">
+                                <input type="text" id="card__input-name" name="card__input-name" class="input" placeholder="Имя / Фамилия" placeholder-en="First / Last Name">
                             </div>
                         </div>
-                        <div class="card__cvv">
-                            <label for="" class="card__label">CVV</label>
-                            <input type="text" class="card__input" placeholder="xxx">
+
+                        <div class="card__input-block card__input-numeral">
+                            <label for="card__input-numeral" class="card__label">
+                                Номер карты
+                                <!--{en}Card number-->
+                            </label>
+                            <div class="card__input input-block">
+                                <input type="text" id="card__input-numeral" name="card__input-numeral" class="input" placeholder=".... .... .... ....">
+                            </div>
                         </div>
-                    </div>
-                    <button class="card__btn btn btn-white">Проверить</button>
+
+                        <div class="card__input-block card__input-date">
+                            <div class="card__date">
+                                <label for="card__input-date" class="card__label">
+                                    Дата
+                                    <!--{en}Date-->
+                                </label>
+                                <div class="card__input input-block">
+                                    <input type="text" id="card__input-date" name="card__input-date" class="input" placeholder="__/__">
+                                </div>
+                            </div>
+                            <div class="card__cvv">
+                                <label for="card__input-cvv" class="card__label">CVV</label>
+                                <div class="card__input input-block">
+                                    <input type="text" id="card__input-cvv" name="card__input-cvv" class="input" placeholder="xxx">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="card__btn btn btn-white">
+                            Проверить
+                            <!--{en}Verify-->
+                        </button>
+                    </form>
                 </div>
             </div>
 

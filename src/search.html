@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('./blocks/main/_head.html', {
+"title": "Поиск",
+})
+
+<body>
+
+    @@include('./blocks/main/_header.html', {
+    "class": "header-black",
+    //////
+    "home": "",
+    "shop": "",
+    "about": "",
+    "blog": "",
+    "contacts": "",
+    })
+
+
+    @@include('./blocks/_info-nav.html', {
+    "title": "Главная / Поиск",
+    "title-en": "Main / Search",
+    "class": "info-nav--other",
+    })
+
+
+
+    <!-- search-page
+    ======================================================= -->
+    <section class="search-page">
+        <div class="container">
+            <div class="search-page__inner">
+                
+                <div class="search__input">
+                    <input type="text" id="search__input" placeholder="поиск">
+                    <svg width="20" height="20">
+                        <use xlink:href="./img/icons/icons.svg#search"/>
+                    </svg>
+                </div>
+
+
+                <div class="search__notfound">
+                    <svg width="20" height="20">
+                        <use xlink:href="./img/icons/icons.svg#sad"/>
+                    </svg>
+                    <h2>Нет результатов</h2>
+                    <p>К сожалению по вашему запросу "<span id="search-result"></span>" ничего не найдено</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- search-page end -->
+
+   
+
+    @@include('./blocks/main/_footer.html')
+
+
+    @@include('./blocks/main/_js.html')
+
+</body>
+
+</html>

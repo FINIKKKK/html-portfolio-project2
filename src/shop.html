@@ -35,18 +35,32 @@
                         <div class="shop__header">
                             <h3 class="shop__header-title">Все</h3>
 
-                            <div class="shop__header-filters">
-                                <select class="shop__header-filter simple-select select">
-                                    <option class="shop__header-option option" value="new" selected="selected">Новые
-                                    </option>
-                                    <option class="shop__header-option option" value="popular">Популярные</option>
-                                </select>
-                                <select name="selectPrice" class="shop__header-filter simple-select select">
-                                    <option class="shop__header-option option" value="smallPrice" selected="selected">
-                                        Цена, по убыванию</option>
-                                    <option class="shop__header-option option" value="bigPrice">Цена, по возрастанию
-                                    </option>
-                                </select>
+                            <div class="shop__header-content">
+
+                                <div class="shop__header-filters">
+                                    <select class="shop__header-filter simple-select">
+                                        <option class="shop__header-option ">Новые</option>
+                                        <option class="shop__header-option">Популярные</option>
+                                    </select>
+                                    <select class="shop__header-filter simple-select">
+                                        <option class="shop__header-option">Цена, по убыванию</option>
+                                        <option class="shop__header-option">Цена, по возрастанию</option>
+                                    </select>
+                                </div>
+
+                                <div class="shop__header-btns">
+                                    <button class="shop__header-btn active">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="./img/icons/icons.svg#" />
+                                        </svg>
+                                    </button>
+                                    <button class="shop__header-btn">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="./img/icons/icons.svg#" />
+                                        </svg>
+                                    </button>
+                                </div>
+
                             </div>
                         </div>
 

@@ -259,8 +259,8 @@
             position: relative;
         }
         .menu__list {
-            display: none;
             pointer-events: none;
+            display: block;
             z-index: 1000;
             position: absolute;
             right: 0;
@@ -286,6 +286,13 @@
                 background-color: $black;
             }
         }
+        .menu__list-item:not(:last-child) {
+            margin-right: 0px;
+        }
+        .menu__list-item.active::after {
+            height: 1px;
+            bottom: 10px;
+        }
         .menu__list-item {
             list-style: none;
             text-transform: uppercase;
@@ -306,6 +313,66 @@
         }
         .menu__list-item:hover a {
             background-color: $gold;
+        }
+    }
+    .header.header-black {
+        .menu__list-item a {
+            color: #fff;
+        }
+        .menu__list-item.active a {
+            color: #fff;
+        }
+        .menu__list-item.active::after {
+            background-color: #fff;
+        }
+        .search {
+            background-color: rgba(#fff, 0.25);
+            svg {
+                fill: #fff;
+            }
+            &.active {
+                input {
+                    border-bottom: 1px solid rgba(#fff, 0.25);
+                    color: rgba(#fff, 0.85);
+                }
+                &:hover {
+                    background-color: rgba(#fff, 0.25);
+                    svg {
+                        fill: #fff;
+                    }
+                }
+            }
+            &:hover {
+                background-color: rgba(#fff, 1);
+                svg {
+                    fill: $black;
+                }
+            }
+        }
+        .simple-select {
+            span {
+                background-color: rgba(#fff, 0.25);
+                color: #fff !important;
+            }
+            ul {
+                top: -70px;
+                background-color: #fff;
+                a {
+                    color: $black;
+                }
+            }
+            &:hover {
+                span {
+                    background-color: rgba(#fff, 1);
+                    color: $black !important;
+                }
+            }
+            &.open {
+                span {
+                    background-color: rgba(#fff, 1);
+                    color: $black !important;
+                }
+            }
         }
     }
     .offers {
@@ -732,6 +799,37 @@
 
 //Max-Width: 650px ================================
 @media (max-width: 650px) {
+    .header .hamburger__btn {
+        margin-left: 0px;
+    }
+    .header .simple-select {
+        transition: 0.4s;
+        transform: translateX(200px);
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        z-index: 1300;
+        ul {
+            top: -70px;
+            bottom: auto;
+        }
+    }
+    .header .search {
+        transition: 0.4s;
+        transform: translateX(200px);
+        position: fixed;
+        bottom: 15px;
+        right: 55px;
+        z-index: 1300;
+    }
+    .header.mobile {
+        .simple-select {
+            transform: translateX(0px);
+        }
+        .search {
+            transform: translateX(0px);
+        }
+    }
     .about__design-img {
         width: 330px;
         height: 330px;
@@ -920,6 +1018,16 @@
 
 //Max-Width: 550px ================================
 @media (max-width: 550px) {
+    .header{
+        padding-top: 0px !important;
+        .menu__list {
+            top: 100px;
+        }
+        .menu__list-item a {
+            font-size: 26px !important;
+            line-height: 10px !important;
+        }
+    }
     .companies {
         height: 115px;
         .js-marquee {
@@ -1831,6 +1939,35 @@
 
 //Max-Width: 400px ================================
 @media (max-width: 400px) {
+    .card__input input {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .card__label {
+        margin-bottom: 4px;
+        font-size: 8px;
+        line-height: 11px;
+    }
+    .card__btn {
+        font-size: 14px;
+        line-height: 18px;
+        padding: 7px 24px;
+    }
+    .card__input-name {
+        margin-top: 0px;
+    }
+    .card__input-block {
+        padding: 5px 10px 5px;
+    }
+    .card__title {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+    .card {
+        min-height: auto;
+        padding: 15px 25px;
+    }
     .quote {
         padding-bottom: 90px;
         width: 100%;
@@ -1858,15 +1995,6 @@
             height: 35% !important;
         }
     }
-    .card__input-block {
-        padding: 10px 10px 12px;
-    }
-    .card__date {
-        margin-right: 50px;
-    }
-    .card__date-selects {
-        width: 120px;
-    }
     .top__title {
         &::after {
             right: -200px;
@@ -1886,8 +2014,8 @@
         height: 250px;
     }
     .similar__title {
-        font-size: 30px;
-        line-height: 34px;
+        font-size: 24px;
+        line-height: 32px;
         &.title-line::after {
             width: 90px;
         }

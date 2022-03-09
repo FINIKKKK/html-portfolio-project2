@@ -328,7 +328,7 @@
             &:hover {
                 .hamburger__line {
                     background-color: rgba(#fff, 1);
-                } 
+                }
             }
         }
     }
@@ -362,10 +362,10 @@
                 background-color: transparent !important;
             }
             .hamburger__line:nth-child(1) {
-                transform: translate(0%, 12px) rotate(315deg);
+                transform: translate(0%, 10px) rotate(315deg);
             }
             .hamburger__line:nth-child(3) {
-                transform: translate(0%, -11px) rotate(-315deg);
+                transform: translate(0%, -7px) rotate(-315deg);
             }
         }
     }
@@ -1706,16 +1706,15 @@
         line-height: 28px;
         margin-bottom: 40px;
     }
-    &__example-numbers {
-        width: 100%;
+    .card__example-numbers {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
-    &__example-num {
-        font-size: 22px;
-        line-height: 28px;
-        letter-spacing: 0.1em;
+    .card__example-num {
+        font-size: 24px;
+        line-height: 24px;
     }
     &__example-flex {
         display: flex;
@@ -1742,8 +1741,12 @@
         padding: 10px 24px 12px;
         border: 1px solid #c7c7c7;
         margin-bottom: 20px;
+        &.input-error {
+            border-color: rgb(145, 53, 53);
+        }
     }
     &__label {
+        display: flex;
         margin-bottom: 7px;
         font-weight: bold;
         font-size: 10px;
@@ -1751,13 +1754,43 @@
         text-transform: capitalize;
         color: #f3f3f3;
     }
-    &__input {
+    .input-block {
+        position: relative;
+    }
+    #card__input-numeral {
+        word-spacing: 20px;
+        &::placeholder {
+            font-weight: 400;
+            font-size: 24px;
+        }
+    }
+    #card__input-date {
+        max-width: 55px;
+    }
+    .error {
+        font-size: 8px;
+        line-height: 10px;
+        white-space: nowrap;
+        border-width: 1px;
+        padding: 3px 5px;
+        left: 0;
+        &::after {
+            top: -4px;
+            border-width: 0 4px 4px 4px;
+            left: 7px;
+            border-color: transparent transparent darken($gold, 5%);
+        }
+    }
+    &__input input {
         background-color: transparent;
         font-family: $font;
         font-weight: bold;
         font-size: 14px;
         line-height: 18px;
         color: #fff;
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
         &::placeholder {
             color: #fff;
         }
@@ -1768,14 +1801,6 @@
     &__input-name .card__input {
         width: 100%;
     }
-    &__input-numeral .card__input {
-        letter-spacing: 5px;
-        width: 50px;
-    }
-    &__input-numbers {
-        display: flex;
-        justify-content: space-between;
-    }
     &__input-data .card__label {
         margin-bottom: 5px;
     }
@@ -1785,11 +1810,11 @@
         font-size: 12px;
         line-height: 15px;
     }
-    &__date-selects {
+    &__input-date {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 150px;
+        width: 100%;
         align-items: flex-end;
     }
     &__input-data {
@@ -2716,6 +2741,60 @@
         }
         svg path:nth-child(2) {
             fill: $black;
+        }
+    }
+}
+
+
+// --------- search-page ----------
+.search-page {
+    padding-top: 70px;
+    min-height: 100vh;
+    .search__input {
+        width: 85%;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 45px;
+        input {
+            border: 1px solid $black;
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 5px;
+        }
+        svg {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    }
+    .search__notfound {
+        margin-top: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 55px;
+        svg {
+            width: 155px;
+            height: 155px;
+            margin-bottom: 15px;
+        }
+        h2 {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 38px;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 24px;
+            color: rgba($black, 0.85);
+            span {
+                font-weight: 700;
+                color: rgba($black, 1);
+            }
         }
     }
 }

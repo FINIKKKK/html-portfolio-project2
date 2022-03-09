@@ -9,24 +9,13 @@ $("body").on('click', '[href*="#"]', function (e) {
 
 // --- Hamburger
 $('.hamburger').on('click', function () {
-    $('.header').toggleClass('mobile')
+    $('.header').toggleClass('mobile');
+    $('html').toggleClass('hidden');
 })
 
 
 
-// --- Slider "Offers"
-// $('.offers__items').slick({
-//     nextArrow: '<div class="next"><svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5833 11.75L16.822 14.5112L25.7912 23.5L16.822 32.4888L19.5833 35.25L31.3333 23.5L19.5833 11.75Z" fill="#555555"/></svg></div>',
-//     prevArrow: '<div class="prev"><svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5833 11.75L16.822 14.5112L25.7912 23.5L16.822 32.4888L19.5833 35.25L31.3333 23.5L19.5833 11.75Z" fill="#555555"/></svg></div>',
-//     responsive: [
-//         {
-//             breakpoint: 600,
-//             settings: {
-//                 arrows: false,
-//             }
-//         },
-//     ]
-// })
+
 
 const offersSwiper = new Swiper('.offers__items', {
     slidesPerView: 1,
@@ -455,15 +444,123 @@ $('.thing__sizes-item').click(function () {
 $('.search').click(function () {
     $(this).addClass('active');
 });
-
-$('.search svg').click(function () {
-    if ($('.search').hasClass('active')) {
-        location.href = 'single-product.html';
+// Убираем модальное окно при клике на другую область
+$(document).mouseup(function (e) { // событие клика по веб-документу
+    var div = $('.search'); // тут указываем класс элемента
+    if (!div.is(e.target) // если клик был не по нашему блоку
+        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+        $('.search').removeClass('active');
     }
 });
 
-$('.search input').keydown(function (e  ) {
-    if (e.keyCode === 13) {
-        location.href = 'single-product.html';
+$('.search svg').click(function () {
+    if ($('.search').hasClass('active')) {
+        location.href = 'search.html';
+        let value = $(this).parent().find('input').val();
+        console.log(value)
+        $('#search__input').val(value)
     }
+});
+
+$('.search input').keydown(function (e) {
+    if (e.keyCode === 13) {
+        location.href = 'search.html';
+    }
+});
+
+
+
+// Маска для input'a кредитная карточка
+$.fn.setCursorPosition = function (pos) {
+    if ($(this).get(0).setSelectionRange) {
+        $(this).get(0).setSelectionRange(pos, pos);
+    } else if ($(this).get(0).createTextRange) {
+        var range = $(this).get(0).createTextRange();
+        range.collapse(true);
+        range.moveEnd('character', pos);
+        range.moveStart('character', pos);
+        range.select();
+    }
+};
+// $('#card__input-numeral').click(function () {
+//     $(this).setCursorPosition(0);
+// }).mask("9999 9999 9999 9999", { "placeholder": "" });
+// $('#card__input-numeral').mask("9999 9999 9999 9999", { "placeholder": "" });
+$('#card__input-numeral').click(function () {
+    $(this).setCursorPosition(0);
+}).mask("9999 9999 9999 9999");
+$('#card__input-numeral').mask("9999 9999 9999 9999");
+
+$('#card__input-cvv').click(function () {
+    $(this).setCursorPosition(0);
+}).mask("999");
+$('#card__input-cvv').mask("999");
+
+$('#card__input-date').click(function () {
+    $(this).setCursorPosition(0);
+}).mask("99/99");
+$('#card__input-date').mask("99/99");
+
+
+
+// --- Проверка валидации 
+$(document).ready(function () {
+    $('#card__form').submit(function (e) {
+        e.preventDefault();
+        var name = $('#card__input-name').val();
+        var card = $('#card__input-numeral').val();
+        var date = $('#card__input-date').val();
+        var cvv = $('#card__input-cvv').val();
+
+        $(".error").remove();
+        $(".input").removeClass('input-error');
+
+        setTimeout(function () {
+            $('.error').remove();
+        }, 5000);
+
+        if (name.length < 1) {
+            $('#card__input-name').parents('.card__input-block').addClass('input-error');
+            if ($("html").attr("lang") === 'ru') {
+                $('#card__input-name').after('<span class="error">Заполните поле</span>');
+            } else {
+                $('#card__input-name').after('<span class="error">Fill in the field</span>');
+            }
+        } else {
+            var regEx = /[^\s]+\s[^\s]+/;
+            var validName = regEx.test(name);
+            if (!validName) {
+                $('#card__input-name').parents('.card__input-block').addClass('input-error');
+                if ($("html").attr("lang") === 'ru') {
+                    $('#card__input-name').after('<span class="error">Заполните правильно</span>');
+                } else {
+                    $('#card__input-name').after('<span class="error">Fill in correctly</span>');
+                }
+            }
+        }
+        if (card.length < 1) {
+            $('#card__input-numeral').parents('.card__input-block').addClass('input-error');
+            if ($("html").attr("lang") === 'ru') {
+                $('#card__input-numeral').after('<span class="error">Заполните поле</span>');
+            } else {
+                $('#card__input-numeral').after('<span class="error">Fill in the field</span>');
+            }
+        }
+        if (date.length < 1) {
+            $('#card__input-date').parents('.card__input-block').addClass('input-error');
+            if ($("html").attr("lang") === 'ru') {
+                $('#card__input-date').after('<span class="error">Заполните поле</span>');
+            } else {
+                $('#card__input-date').after('<span class="error">Fill in the field</span>');
+            }
+        }
+        if (cvv.length < 1) {
+            $('#card__input-cvv').parents('.card__input-block').addClass('input-error');
+            if ($("html").attr("lang") === 'ru') {
+                $('#card__input-cvv').after('<span class="error">Заполните поле</span>');
+            } else {
+                $('#card__input-cvv').after('<span class="error">Fill in the field</span>');
+            }
+        }
+    });
 });
