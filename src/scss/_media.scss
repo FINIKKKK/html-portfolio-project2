@@ -325,55 +325,6 @@
         .menu__list-item.active::after {
             background-color: #fff;
         }
-        .search {
-            background-color: rgba(#fff, 0.25);
-            svg {
-                fill: #fff;
-            }
-            &.active {
-                input {
-                    border-bottom: 1px solid rgba(#fff, 0.25);
-                    color: rgba(#fff, 0.85);
-                }
-                &:hover {
-                    background-color: rgba(#fff, 0.25);
-                    svg {
-                        fill: #fff;
-                    }
-                }
-            }
-            &:hover {
-                background-color: rgba(#fff, 1);
-                svg {
-                    fill: $black;
-                }
-            }
-        }
-        .simple-select {
-            span {
-                background-color: rgba(#fff, 0.25);
-                color: #fff !important;
-            }
-            ul {
-                top: -70px;
-                background-color: #fff;
-                a {
-                    color: $black;
-                }
-            }
-            &:hover {
-                span {
-                    background-color: rgba(#fff, 1);
-                    color: $black !important;
-                }
-            }
-            &.open {
-                span {
-                    background-color: rgba(#fff, 1);
-                    color: $black !important;
-                }
-            }
-        }
     }
     .offers {
         .swiper-pagination {
@@ -802,6 +753,57 @@
     .header .hamburger__btn {
         margin-left: 0px;
     }
+    .header.header-black {
+        .search {
+            background-color: rgba(#fff, 0.25);
+            svg {
+                fill: #fff;
+            }
+            &.active {
+                input {
+                    border-bottom: 1px solid rgba(#fff, 0.25);
+                    color: rgba(#fff, 0.85);
+                }
+                &:hover {
+                    background-color: rgba(#fff, 0.25);
+                    svg {
+                        fill: #fff;
+                    }
+                }
+            }
+            &:hover {
+                background-color: rgba(#fff, 1);
+                svg {
+                    fill: $black;
+                }
+            }
+        }
+        .simple-select {
+            span {
+                background-color: rgba(#fff, 0.25);
+                color: #fff !important;
+            }
+            ul {
+                top: -70px;
+                background-color: #fff;
+                a {
+                    color: $black;
+                }
+            }
+            &:hover {
+                span {
+                    background-color: rgba(#fff, 1);
+                    color: $black !important;
+                }
+            }
+            &.open {
+                span {
+                    background-color: rgba(#fff, 1);
+                    color: $black !important;
+                }
+            }
+        }
+    }
     .header .simple-select {
         transition: 0.4s;
         transform: translateX(200px);
@@ -1018,7 +1020,33 @@
 
 //Max-Width: 550px ================================
 @media (max-width: 550px) {
-    .header{
+    .search-page .search__notfound p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .search-page .search__notfound {
+        width: 85%;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+    .search-page .search__notfound h2 {
+        font-size: 20px;
+        line-height: 32px;
+    }
+    .search-page .search__notfound svg {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 10px;
+    }
+    .search-page {
+        padding-top: 48px;
+        min-height: 75vh;
+    }
+    .search-page .search__input {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    .header {
         padding-top: 0px !important;
         .menu__list {
             top: 100px;
@@ -1299,6 +1327,23 @@
 
 //Max-Width: 500px ================================
 @media (max-width: 500px) {
+    .search-page .search__input svg {
+        width: 17px;
+        height: 17px;
+    }
+    .search-page .search__input input {
+        padding: 7px 7px;
+        padding-right: 40px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .search-page {
+        padding-top: 35px;
+        min-height: 65vh;
+    }
+    .header.header-black {
+        height: 50px;
+    }
     .first-screen {
         height: 50vh;
     }

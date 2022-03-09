@@ -456,9 +456,6 @@ $(document).mouseup(function (e) { // событие клика по веб-до
 $('.search svg').click(function () {
     if ($('.search').hasClass('active')) {
         location.href = 'search.html';
-        let value = $(this).parent().find('input').val();
-        console.log(value)
-        $('#search__input').val(value)
     }
 });
 

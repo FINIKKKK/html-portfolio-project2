@@ -5278,6 +5278,7 @@ html[lang="en"] [lang="ru"] {
   width: 100%;
   padding: 10px 12px;
   border-radius: 5px;
+  padding-right: 40px;
 }
 
 .search-page .search__input svg {
@@ -5306,6 +5307,7 @@ html[lang="en"] [lang="ru"] {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 55px;
+  text-align: center;
 }
 
 .search-page .search__notfound svg {
@@ -12394,59 +12396,6 @@ a.ui-button:active,
     background-color: #fff;
   }
 
-  .header.header-black .search {
-    background-color: rgba(255, 255, 255, 0.25);
-  }
-
-  .header.header-black .search svg {
-    fill: #fff;
-  }
-
-  .header.header-black .search.active input {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  .header.header-black .search.active:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-  }
-
-  .header.header-black .search.active:hover svg {
-    fill: #fff;
-  }
-
-  .header.header-black .search:hover {
-    background-color: white;
-  }
-
-  .header.header-black .search:hover svg {
-    fill: #1c1c1c;
-  }
-
-  .header.header-black .simple-select span {
-    background-color: rgba(255, 255, 255, 0.25);
-    color: #fff !important;
-  }
-
-  .header.header-black .simple-select ul {
-    top: -70px;
-    background-color: #fff;
-  }
-
-  .header.header-black .simple-select ul a {
-    color: #1c1c1c;
-  }
-
-  .header.header-black .simple-select:hover span {
-    background-color: white;
-    color: #1c1c1c !important;
-  }
-
-  .header.header-black .simple-select.open span {
-    background-color: white;
-    color: #1c1c1c !important;
-  }
-
   .offers .swiper-pagination {
     display: block;
   }
@@ -13000,6 +12949,59 @@ a.ui-button:active,
     margin-left: 0px;
   }
 
+  .header.header-black .search {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .header.header-black .search svg {
+    fill: #fff;
+  }
+
+  .header.header-black .search.active input {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .header.header-black .search.active:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .header.header-black .search.active:hover svg {
+    fill: #fff;
+  }
+
+  .header.header-black .search:hover {
+    background-color: white;
+  }
+
+  .header.header-black .search:hover svg {
+    fill: #1c1c1c;
+  }
+
+  .header.header-black .simple-select span {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #fff !important;
+  }
+
+  .header.header-black .simple-select ul {
+    top: -70px;
+    background-color: #fff;
+  }
+
+  .header.header-black .simple-select ul a {
+    color: #1c1c1c;
+  }
+
+  .header.header-black .simple-select:hover span {
+    background-color: white;
+    color: #1c1c1c !important;
+  }
+
+  .header.header-black .simple-select.open span {
+    background-color: white;
+    color: #1c1c1c !important;
+  }
+
   .header .simple-select {
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
@@ -13274,6 +13276,38 @@ a.ui-button:active,
 }
 
 @media (max-width: 550px) {
+  .search-page .search__notfound p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .search-page .search__notfound {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+
+  .search-page .search__notfound h2 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .search-page .search__notfound svg {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 10px;
+  }
+
+  .search-page {
+    padding-top: 48px;
+    min-height: 75vh;
+  }
+
+  .search-page .search__input {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
   .header {
     padding-top: 0px !important;
   }
@@ -13621,6 +13655,27 @@ a.ui-button:active,
 }
 
 @media (max-width: 500px) {
+  .search-page .search__input svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .search-page .search__input input {
+    padding: 7px 7px;
+    padding-right: 40px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .search-page {
+    padding-top: 35px;
+    min-height: 65vh;
+  }
+
+  .header.header-black {
+    height: 50px;
+  }
+
   .first-screen {
     height: 50vh;
   }
