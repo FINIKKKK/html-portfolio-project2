@@ -44,6 +44,7 @@ $(document).on('click touch', '.selectDropdown ul li a', function (e) {
 $('.simple-select > span').on('click touch', function (e) {
     var self = $(this).parent();
     self.toggleClass('open');
+    $(".simple-select").not(self).removeClass("open");
 });
 
 $(document).on('click touch', function (e) {

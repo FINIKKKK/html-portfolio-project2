@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 @@include('./blocks/main/_head.html', {
-"title": "Магазин",
+"title": "Проект-2 | Магазин",
+"title-en": "Project-2 | Shop",
 })
 
 <body>
@@ -25,6 +26,52 @@
     })
 
 
+    <!-- top
+    ======================================================= -->
+    <section class="top">
+        <div class="container">
+            <div class="top__inner swiper">
+                <div class="swiper-wrapper">
+                    <div class="top__item swiper-slide">
+                        <img src="./img/bg--top.jpg" width="" height="" loading="lazy" alt="" class="top__item-img">
+                        <div class="top__item-content">
+                            <h1 class="top__item-title">Летняя коллекция</h1>
+                            <h3 class="top__item-pretitle">Эй, что за повод?</h3>
+                            <p class="top__item-text">Независимо от того, идете ли вы на вечеринку или отказываетесь от нее в пользу лучшего приглашения, мы здесь, чтобы помочь вам стать хозяином вечера. Сделайте воспоминания такими приятными, что вы будете рады, что не отменили (на этот раз), в нашей ультра крутой одежде для особых случаев.</p>
+                            <a href="shop.html" class="top__item-btn btn">Идти в магазин</a>
+                        </div>
+                    </div>
+
+                    <div class="top__item swiper-slide">
+                        <img src="./img/bg--top.jpg" width="" height="" loading="lazy" alt="" class="top__item-img">
+                        <div class="top__item-content">
+                            <h1 class="top__item-title">Новая коллекция</h1>
+                            <h3 class="top__item-pretitle">Эй, что за повод?</h3>
+                            <p class="top__item-text"> Мы рассмотрели все: от блузок с пышными плечами до мини-платьев с запахом спереди и украшенных серег, до убийственных босоножек на каблуке с ремешками. Или, если вы будущая невеста, подружка невесты или просто планируете быть самым стильным гостем (что неизбежно), у нас есть платья для особых случаев и сшитые на заказ костюмы, которые гарантированно сделают вас незабываемо культовой. Что-нибудь для бесплатного бара, верно?</p>
+                            <a href="shop.html" class="top__item-btn btn">Идти в магазин</a>
+                        </div>
+                    </div>
+
+                    <div class="top__item swiper-slide">
+                        <img src="./img/bg--top.jpg" width="" height="" loading="lazy" alt="" class="top__item-img">
+                        <div class="top__item-content">
+                            <h1 class="top__item-title">Базовый гардероб</h1>
+                            <h3 class="top__item-pretitle">Эй, что за повод?</h3>
+                            <p class="top__item-text">
+                                Независимо от того, идете ли вы на вечеринку или отказываетесь от нее в пользу лучшего приглашения, мы здесь, чтобы помочь вам стать хозяином вечера. Сделайте воспоминания такими приятными, что вы будете рады, что не отменили (на этот раз), в нашей ультра крутой одежде для особых случаев.
+                            </p>
+                            <a href="shop.html" class="top__item-btn btn">Идти в магазин</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+    </section>
+    <!-- top end -->
+
+
+
     <main class="main main--shop">
         <div class="container">
             <div class="main__inner">
@@ -33,30 +80,45 @@
                     <div class="shop">
 
                         <div class="shop__header">
-                            <h3 class="shop__header-title">Все</h3>
+                            <h3 class="shop__header-title">
+                                Все
+                                <!--{en}All-->
+                            </h3>
 
                             <div class="shop__header-content">
 
                                 <div class="shop__header-filters">
                                     <select class="shop__header-filter simple-select">
-                                        <option class="shop__header-option ">Новые</option>
-                                        <option class="shop__header-option">Популярные</option>
+                                        <option class="shop__header-option ">
+                                            Новые
+                                            <!--{en}New-->
+                                        </option>
+                                        <option class="shop__header-option">
+                                            Популярные
+                                            <!--{en}Popular-->
+                                        </option>
                                     </select>
                                     <select class="shop__header-filter simple-select">
-                                        <option class="shop__header-option">Цена, по убыванию</option>
-                                        <option class="shop__header-option">Цена, по возрастанию</option>
+                                        <option class="shop__header-option">
+                                            Цена, по убыванию
+                                            <!--{en}Price, descending-->
+                                        </option>
+                                        <option class="shop__header-option">
+                                            Цена, по возрастанию
+                                            <!--{en}Price, ascending-->
+                                        </option>
                                     </select>
                                 </div>
 
                                 <div class="shop__header-btns">
-                                    <button class="shop__header-btn active">
+                                    <button class="shop__header-btn shop__header-btn1 active">
                                         <svg width="20" height="20">
-                                            <use xlink:href="./img/icons/icons.svg#" />
+                                            <use xlink:href="./img/icons/icons.svg#grid1" />
                                         </svg>
                                     </button>
-                                    <button class="shop__header-btn">
+                                    <button class="shop__header-btn shop__header-btn2">
                                         <svg width="20" height="20">
-                                            <use xlink:href="./img/icons/icons.svg#" />
+                                            <use xlink:href="./img/icons/icons.svg#grid2" />
                                         </svg>
                                     </button>
                                 </div>
@@ -64,123 +126,162 @@
                             </div>
                         </div>
 
-                        <div class="shop__products">
-                            @@include('./blocks/_product.html', {
-                            "img": "./img/product-1.jpg",
-                            "category": "Майка",
-                            "name": "Whether",
-                            "price": "17.00",
-                            //---//
-                            "star1": "",
-                            "star2": "",
-                            "star3": "",
-                            "star4": "",
-                            "star5": "star--not",
-                            })
+                        <div class="shop__products grid1">
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-1.jpg",
+                                    "category": "Майка",
+                                    "category-en": "Undershirt",
+                                    "name": "Whether",
+                                    "name-en": "Whether",
+                                    "price": "17.00",
+                                    })
+                                </div>
+                            </div>
 
-                            @@include('./blocks/_product.html', {
-                            "img": "./img/product-2.jpg",
-                            "category": "Футболка",
-                            "name": "LoveLife",
-                            "price": "24.00",
-                            //---//
-                            "star1": "",
-                            "star2": "",
-                            "star3": "",
-                            "star4": "",
-                            "star5": "",
-                            })
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-2.jpg",
+                                    "category": "Футболка",
+                                    "category-en": "T-shirt",
+                                    "name": "LoveLife",
+                                    "name-en": "LoveLife",
+                                    "price": "24.00",
+                                    })
+                                </div>
+                            </div>
 
-                            @@include('./blocks/_product.html', {
-                            "img": "./img/product-3.jpg",
-                            "category": "Футболка",
-                            "name": "Wrastler",
-                            "price": "21.99",
-                            //---//
-                            "star1": "",
-                            "star2": "",
-                            "star3": "",
-                            "star4": "star--not",
-                            "star5": "star--not",
-                            })
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-3.jpg",
+                                    "category": "Футболка",
+                                    "category-en": "T-shirt",
+                                    "name": "Wrastler",
+                                    "name-en": "Wrastler",
+                                    "price": "21.99",
+                                    })
+                                </div>
+                            </div>
 
-                            @@include('./blocks/_product.html', {
-                            "img": "./img/product-4.jpg",
-                            "category": "Рубашка",
-                            "name": "Merris",
-                            "price": "32.99",
-                            //---//
-                            "star1": "",
-                            "star2": "",
-                            "star3": "",
-                            "star4": "",
-                            "star5": "star--not",
-                            })
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-4.jpg",
+                                    "category": "Рубашка",
+                                    "category-en": "Shirt",
+                                    "name": "Merris",
+                                    "name-en": "Merris",
+                                    "price": "32.99",
+                                    })
+                                </div>
+                            </div>
 
-                            @@include('./blocks/_product.html', {
-                            "img": "./img/product-1.jpg",
-                            "category": "Майка",
-                            "name": "Whether",
-                            "price": "17.00",
-                            //---//
-                            "star1": "",
-                            "star2": "",
-                            "star3": "",
-                            "star4": "",
-                            "star5": "star--not",
-                            })
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-1.jpg",
+                                    "category": "Майка",
+                                    "category-en": "Undershirt",
+                                    "name": "Whether",
+                                    "name-en": "Whether",
+                                    "price": "17.00",
+                                    })
+                                </div>
+                            </div>
 
-                            @@include('./blocks/_product.html', {
-                            "img": "./img/product-2.jpg",
-                            "category": "Футболка",
-                            "name": "LoveLife",
-                            "price": "24.00",
-                            //---//
-                            "star1": "",
-                            "star2": "",
-                            "star3": "",
-                            "star4": "",
-                            "star5": "",
-                            })
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-2.jpg",
+                                    "category": "Футболка",
+                                    "category-en": "T-shirt",
+                                    "name": "LoveLife",
+                                    "name-en": "LoveLife",
+                                    "price": "24.00",
+                                    })
+                                </div>
+                            </div>
 
-                            @@include('./blocks/_product.html', {
-                            "img": "./img/product-3.jpg",
-                            "category": "Футболка",
-                            "name": "Wrastler",
-                            "price": "21.99",
-                            //---//
-                            "star1": "",
-                            "star2": "",
-                            "star3": "",
-                            "star4": "star--not",
-                            "star5": "star--not",
-                            })
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-3.jpg",
+                                    "category": "Футболка",
+                                    "category-en": "T-shirt",
+                                    "name": "Wrastler",
+                                    "name-en": "Wrastler",
+                                    "price": "21.99",
+                                    })
+                                </div>
+                            </div>
 
-                            @@include('./blocks/_product.html', {
-                            "img": "./img/product-4.jpg",
-                            "category": "Рубашка",
-                            "name": "Merris",
-                            "price": "32.99",
-                            //---//
-                            "star1": "",
-                            "star2": "",
-                            "star3": "",
-                            "star4": "",
-                            "star5": "star--not",
-                            })
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-4.jpg",
+                                    "category": "Рубашка",
+                                    "category-en": "Shirt",
+                                    "name": "Merris",
+                                    "name-en": "Merris",
+                                    "price": "32.99",
+                                    })
+                                </div>
+                            </div>
 
-                            @@include('./blocks/_product.html', {
-                            "img": "./img/product-1.jpg",
-                            "category": "Майка",
-                            "name": "Whether",
-                            "price": "17.00",
-                            //---//
-                            "star1": "",
-                            "star2": "",
-                            "star3": "",
-                            "star4": "",
-                            "star5": "star--not",
-                            })
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="0.8s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-1.jpg",
+                                    "category": "Майка",
+                                    "category-en": "Undershirt",
+                                    "name": "Whether",
+                                    "name-en": "Whether",
+                                    "price": "17.00",
+                                    })
+                                </div>
+                            </div>
+
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="0.9s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-2.jpg",
+                                    "category": "Футболка",
+                                    "category-en": "T-shirt",
+                                    "name": "LoveLife",
+                                    "name-en": "LoveLife",
+                                    "price": "24.00",
+                                    })
+                                </div>
+                            </div>
+
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-3.jpg",
+                                    "category": "Футболка",
+                                    "category-en": "T-shirt",
+                                    "name": "Wrastler",
+                                    "name-en": "Wrastler",
+                                    "price": "21.99",
+                                    })
+                                </div>
+                            </div>
+
+                            <div class="products__item-wrapper">
+                                <div class="products__item wrapper wow animate__animated animate__fadeInUp" data-wow-delay="1.1s">
+                                    @@include('./blocks/_product.html', {
+                                    "img": "./img/products/product-4.jpg",
+                                    "category": "Рубашка",
+                                    "category-en": "Shirt",
+                                    "name": "Merris",
+                                    "name-en": "Merris",
+                                    "price": "32.99",
+                                    })
+                                </div>
+                            </div>
 
                         </div>
 
@@ -193,70 +294,134 @@
                     <aside class="shop__sidebar">
 
                         <div class="shop__sidebar-categories shop__sidebar-block">
-                            <h3 class="shop__categories-title shop__sidebar-title">Категории</h3>
+                            <h3 class="shop__categories-title shop__sidebar-title">
+                                Категории
+                                <!--{en}Categories-->
+                            </h3>
                             <div class="shop__sidebar-inner">
                                 <ul class="shop__categories-list">
                                     <li class="shop__categories-item">
-                                        <a href="#">платья</a>
+                                        <a href="#">
+                                            платья
+                                            <!--{en}dresses-->
+                                        </a>
                                     </li>
                                     <li class="shop__categories-item">
-                                        <a href="#">Юбки</a>
+                                        <a href="#">
+                                            Юбки
+                                            <!--{en}Skirts-->
+                                        </a>
                                     </li>
                                     <li class="shop__categories-item">
-                                        <a href="#">Джинсы</a>
+                                        <a href="#">
+                                            Джинсы
+                                            <!--{en}Jeans-->
+                                        </a>
                                     </li>
                                     <li class="shop__categories-item">
-                                        <a href="#">Вверх</a>
+                                        <a href="#">
+                                            Вверх
+                                            <!--{en}Up Clothes-->
+                                        </a>
                                     </li>
                                     <li class="shop__categories-item">
-                                        <a href="#">Обувь</a>
+                                        <a href="#">
+                                            Обувь
+                                            <!--{en}Shoes-->
+                                        </a>
                                     </li>
                                     <li class="shop__categories-item">
-                                        <a href="#">аксессуары</a>
+                                        <a href="#">
+                                            аксессуары
+                                            <!--{en}accessories-->
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="shop__sidebar-filters shop__sidebar-block">
-                            <h3 class="shop__filters-title shop__sidebar-title">Фильтры</h3>
+                            <h3 class="shop__filters-title shop__sidebar-title">
+                                Фильтры
+                                <!--{en}Filters-->
+                            </h3>
                             <div class="shop__sidebar-inner">
                                 <div class="shop__filters-price">
                                     <div class="shop__price-header">
-                                        <h4 class="shop__price-title shop__filters-pretitle">Цена</h4>
+                                        <h4 class="shop__price-title shop__filters-pretitle">
+                                            Цена
+                                            <!--{en}Price-->
+                                        </h4>
                                         <input type="text" id="amount" readonly>
                                     </div>
                                     <div id="slider-range"></div>
                                 </div>
+
                                 <div class="shop__filters-size">
-                                    <h4 class="shop__size-title shop__filters-pretitle">Размер</h4>
+                                    <h4 class="shop__size-title shop__filters-pretitle">
+                                        Размер
+                                        <!--{en}Size-->
+                                    </h4>
                                     <div class="shop__size-list">
                                         <div class="checkbox shop__size-cheakbox">
                                             <div class="checkbox shop__size-cheakbox">
                                                 <input class="custom-checkbox" type="checkbox" id="smallSize" name="smallSize">
-                                                <label for="smallSize">Маленький</label>
+                                                <label for="smallSize">
+                                                    Маленький
+                                                    <!--{en}Small-->
+                                                </label>
                                             </div>
                                         </div>
                                         <div class="checkbox shop__size-cheakbox">
-                                            <label for="averageSize">Средний</label>
-                                            <input type="checkbox" id="averageSize" value>
+                                            <div class="checkbox shop__size-cheakbox">
+                                                <input class="custom-checkbox" type="checkbox" id="averageSize" name="averageSize">
+                                                <label for="averageSize">
+                                                    Средний
+                                                    <!--{en}Average-->
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="checkbox shop__size-cheakbox">
-                                            <label for="bigSize">Большой</label>
-                                            <input type="checkbox" id="bigSize" value>
+                                            <div class="checkbox shop__size-cheakbox">
+                                                <input class="custom-checkbox" type="checkbox" id="bigSize" name="bigSize">
+                                                <label for="bigSize">
+                                                    Большой
+                                                    <!--{en}Big-->
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="shop__filters-color">
-                                    <h4 class="shop__price-title shop__filters-pretitle">Цвет</h4>
+                                    <h4 class="shop__price-title shop__filters-pretitle">
+                                        Цвет
+                                        <!--{en}Color-->
+                                    </h4>
                                     <ul class="shop__color-list">
-                                        <li class="shop__color-item">
-                                            <a href="#" class="color--black"></a>
+                                        <li class="shop__color-item color--black">
+                                            <a href="#"></a>
                                         </li>
-                                        <li class="shop__color-item">
-                                            <a href="#" class="color--white"></a>
+                                        <li class="shop__color-item color--gray">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="shop__color-item color--blue">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="shop__color-item color--red">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="shop__color-item color--white">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="shop__color-item color--green">
+                                            <a href="#"></a>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="shop__filters-btns">
+                                    <button class="shop__filters-btn btn disabled">Очистить</button>
+                                    <button class="shop__filters-btn btn disabled">Применить</button>
                                 </div>
                             </div>
                         </div>

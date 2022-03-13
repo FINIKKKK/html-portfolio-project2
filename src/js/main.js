@@ -243,9 +243,6 @@ wow.init();
 
 
 
-var tran = new Translater({
-    lang: `${$("html").attr("lang")}`
-});
 
 
 
@@ -560,4 +557,49 @@ $(document).ready(function () {
             }
         }
     });
+});
+
+
+
+const swiperTop = new Swiper('.top__inner', {
+    loop: true,
+    // direction: "vertical",
+    effect: "fade",
+    fadeEffect: {
+        crossFade: true
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+});
+
+
+
+$('.shop__header-btn1').click(function () {
+    $('.shop__header-btn').removeClass('active');
+    $(this).toggleClass('active');
+    $('.shop__products').removeClass('grid2'); 
+    $('.shop__products').addClass('grid1'); 
+});
+
+$('.shop__header-btn2').click(function () {
+    $('.shop__header-btn').removeClass('active');
+    $(this).toggleClass('active');
+    $('.shop__products').removeClass('grid1'); 
+    $('.shop__products').addClass('grid2'); 
+});
+
+
+
+$('.shop__color-item').click(function () {
+    $(this).toggleClass('active');
+});
+
+$('.shop__categories-title').click(function () {
+    $(this).parent().toggleClass('hide');
 });

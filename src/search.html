@@ -2,7 +2,8 @@
 <html lang="ru">
 
 @@include('./blocks/main/_head.html', {
-"title": "Поиск",
+"title": "Проект-2 | Поиск",
+"title-en": "Project-2 | Search",
 })
 
 <body>
@@ -25,27 +26,32 @@
     })
 
 
-
     <!-- search-page
     ======================================================= -->
     <section class="search-page">
         <div class="container">
             <div class="search-page__inner">
-                
+
                 <div class="search__input">
-                    <input type="text" id="search__input" placeholder="поиск">
+                    <input type="text" id="search__input" placeholder="Поиск" placeholder="Search">
                     <svg width="20" height="20">
-                        <use xlink:href="./img/icons/icons.svg#search"/>
+                        <use xlink:href="./img/icons/icons.svg#search" />
                     </svg>
                 </div>
 
 
                 <div class="search__notfound">
                     <svg width="20" height="20">
-                        <use xlink:href="./img/icons/icons.svg#sad"/>
+                        <use xlink:href="./img/icons/icons.svg#sad" />
                     </svg>
-                    <h2>Нет результатов</h2>
-                    <p>К сожалению по вашему запросу "<span id="search-result">gfgf</span>" ничего не найдено</p>
+                    <h2>
+                        Нет результатов
+                        <!--{en}No results-->
+                    </h2>
+                    <p>К сожалению по вашему запросу "
+                        <!--{en}Unfortunately for your request "--><span id="search-result">gfgf</span>" ничего не найдено
+                        <!--{en}nothing found-->
+                    </p>
                 </div>
 
             </div>
@@ -53,7 +59,6 @@
     </section>
     <!-- search-page end -->
 
-   
 
     @@include('./blocks/main/_footer.html')
 

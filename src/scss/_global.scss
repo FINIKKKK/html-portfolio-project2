@@ -277,6 +277,7 @@ section {
 
 .checkbox {
     label {
+        cursor: pointer;
         transition: 0.3s;
     }
     &:hover {
