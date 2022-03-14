@@ -413,20 +413,6 @@ $(window).scroll(function () {
 
 
 
-// --- Диапазон цен
-$(function () {
-    $("#slider-range").slider({
-        range: true,
-        min: 0,
-        max: 500,
-        values: [0, 300],
-        slide: function (event, ui) {
-            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-        }
-    });
-    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
-        " - $" + $("#slider-range").slider("values", 1));
-});
 
 
 
@@ -868,7 +854,6 @@ $(document).ready(function () {
 
 const swiperTop = new Swiper('.top__inner', {
     loop: true,
-    // direction: "vertical",
     effect: "fade",
     fadeEffect: {
         crossFade: true
@@ -876,6 +861,9 @@ const swiperTop = new Swiper('.top__inner', {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + '0' +(index + 1) + "</span>";
+        },
     },
     autoplay: {
         delay: 5000,
@@ -888,15 +876,15 @@ const swiperTop = new Swiper('.top__inner', {
 $('.shop__header-btn1').click(function () {
     $('.shop__header-btn').removeClass('active');
     $(this).toggleClass('active');
-    $('.shop__products').removeClass('grid2'); 
-    $('.shop__products').addClass('grid1'); 
+    $('.shop__products').removeClass('grid2');
+    $('.shop__products').addClass('grid1');
 });
 
 $('.shop__header-btn2').click(function () {
     $('.shop__header-btn').removeClass('active');
     $(this).toggleClass('active');
-    $('.shop__products').removeClass('grid1'); 
-    $('.shop__products').addClass('grid2'); 
+    $('.shop__products').removeClass('grid1');
+    $('.shop__products').addClass('grid2');
 });
 
 
@@ -907,7 +895,82 @@ $('.shop__color-item').click(function () {
 
 $('.shop__categories-title').click(function () {
     $(this).parent().toggleClass('hide');
-});;
+});
+
+$('.filters__btn').click(function () {
+    $(this).toggleClass('active');
+    $('.shop__sidebar').toggleClass('show');
+});
+// Убираем модальное окно при клике на другую область
+$(document).mouseup(function (e) { // событие клика по веб-документу
+    var div = $('.shop__sidebar, .filters__btn'); // тут указываем класс элемента
+    if (!div.is(e.target) // если клик был не по нашему блоку
+        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+        $('.shop__sidebar').removeClass('show');
+    }
+});
+
+
+
+// $('.checkbox label').click(function() {
+//     let el = $(this).parent().find('.custom-checkbox');
+//     if (el.attr('checked')) {
+//         el.removeAttr('checked');
+//     } else {
+//         el.attr('checked', 'checked');
+//     }
+// });
+
+$('.checkbox label').click(function () {
+    $(this).parent().find('.custom-checkbox').toggleClass('checked');
+})
+
+
+// --- Диапазон цен
+$(function () {
+    $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 500,
+        values: [0, 300],
+        slide: function (event, ui) {
+            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+        }
+    });
+    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+        " - $" + $("#slider-range").slider("values", 1));
+});
+
+
+$('.shop__sidebar-inner').click(function () {
+    if ($('.shop__color-item').hasClass('active')) {
+        $(".shop__filters-clear").removeClass('disabled');
+        $(".shop__filters-apply").removeClass('disabled');
+    }
+
+    if ($('.custom-checkbox').hasClass('checked')) {
+        $(".shop__filters-clear").removeClass('disabled');
+        $(".shop__filters-apply").removeClass('disabled');
+    }
+});
+
+
+$('#slider-range').click(function () {
+    if ($('#amount').val() != '$0 - $300') {
+        $(".shop__filters-clear").removeClass('disabled');
+        $(".shop__filters-apply").removeClass('disabled');
+    }
+});
+
+$('.shop__filters-clear').click(function () {
+    $('.shop__color-item').removeClass('active');
+    $('.custom-checkbox').removeClass('checked');
+    $('#amount').val('$0 - $300');
+    $("#slider-range").slider("option", "values", [0, 300]);
+});
+
+
+;
 
 
 
