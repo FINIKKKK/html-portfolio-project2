@@ -1947,7 +1947,7 @@
     .shop .simple-select:nth-child(1) ul {
         width: 95px;
     }
-    .shop .simple-select:nth-child(1) {
+    .shop .simple-select:not(:last-child) {
         margin-bottom: 10px;
         margin-right: 0;
     }

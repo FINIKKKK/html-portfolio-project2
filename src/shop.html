@@ -18,6 +18,7 @@
     "contacts": "",
     })
 
+    <div class="cursor-dot-outline"></div>
 
     @@include('./blocks/_info-nav.html', {
     "title": "Главная / Магазин",
@@ -156,31 +157,30 @@
                                     Все
                                     <!--{en}All-->
                                 </h3>
-                                <button class="filters__btn btn">Filters</button>
+                                <button class="filters__btn btn">
+                                    Фильтры
+                                    <!--{en}Filters-->
+                                </button>
                             </div>
 
                             <div class="shop__header-content">
 
                                 <div class="shop__header-filters">
-                                    <select class="shop__header-filter simple-select">
-                                        <option class="shop__header-option ">
-                                            Новые
-                                            <!--{en}New-->
-                                        </option>
-                                        <option class="shop__header-option">
-                                            Популярные
-                                            <!--{en}Popular-->
-                                        </option>
+                                    <select class="shop__header-filter shop__header-filter1 simple-select" lang="ru">
+                                        <option class="shop__header-option">Новые</option>
+                                        <option class="shop__header-option">Популярные</option>
                                     </select>
-                                    <select class="shop__header-filter simple-select">
-                                        <option class="shop__header-option">
-                                            Цена, по убыванию
-                                            <!--{en}Price, descending-->
-                                        </option>
-                                        <option class="shop__header-option">
-                                            Цена, по возрастанию
-                                            <!--{en}Price, ascending-->
-                                        </option>
+                                    <select class="shop__header-filter shop__header-filter1 simple-select" lang="en">
+                                        <option class="shop__header-option">New</option>
+                                        <option class="shop__header-option">Popular</option>
+                                    </select>
+                                    <select class="shop__header-filter shop__header-filter2 simple-select" lang="ru">
+                                        <option class="shop__header-option">Цена, по убыванию </option>
+                                        <option class="shop__header-option">Цена, по возрастанию </option>
+                                    </select>
+                                    <select class="shop__header-filter shop__header-filter2 simple-select" lang="en">
+                                        <option class="shop__header-option">Price, descending</option>
+                                        <option class="shop__header-option">Price, ascending</option>
                                     </select>
                                 </div>
 

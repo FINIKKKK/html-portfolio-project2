@@ -19,14 +19,12 @@
 // Jquery ----------------
 @@include('../../node_modules/jquery/dist/jquery.min.js');
 
+
 @@include('../../node_modules/translater.js/dist/translater.min.js');
 
-var tran = new Translater({
-  lang: `${$("html").attr("lang")}`
-});
+
 
 // Plugins ----------------
-@@include('./plugins/slick.min.js');
 @@include('./plugins/jquery-ui.min.js');
 @@include('./plugins/simple-select.js');
 @@include('./plugins/jquery.maskedinput.js');
@@ -34,6 +32,7 @@ var tran = new Translater({
 @@include('../../node_modules/swiper/swiper-bundle.min.js');
 @@include('../../node_modules/wowjs/dist/wow.min.js');
 @@include('../../node_modules/jquery.marquee/jquery.marquee.min.js');
+
 
 // Main-JS -----------------
 @@include('./main.js');

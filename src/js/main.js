@@ -14,9 +14,41 @@ $('.hamburger').on('click', function () {
 })
 
 
+// --- Закрытие списка при скролле 
+$(window).scroll(function () {
+    $('.simple-select').removeClass('open');
+    $('.search').removeClass('active');
+});
+
+
+// --- Активный Search
+$('.search').click(function () {
+    $(this).addClass('active');
+});
+// Убираем модальное окно при клике на другую область
+$(document).mouseup(function (e) { // событие клика по веб-документу
+    var div = $('.search'); // тут указываем класс элемента
+    if (!div.is(e.target) // если клик был не по нашему блоку
+        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+        $('.search').removeClass('active');
+    }
+});
+// Неактивный Search
+$('.search svg').click(function () {
+    if ($('.search').hasClass('active')) {
+        location.href = 'search.html';
+    }
+});
+$('.search input').keydown(function (e) {
+    if (e.keyCode === 13) {
+        location.href = 'search.html';
+    }
+});
 
 
 
+
+// --- Slider Offers
 const offersSwiper = new Swiper('.offers__items', {
     slidesPerView: 1,
     loop: true,
@@ -49,6 +81,7 @@ $(window).scroll(function () {
 
 
 
+// --- Slider Products
 const productsSwiper = new Swiper('.products__slider', {
     slidesPerView: 5,
     spaceBetween: 30,
@@ -89,25 +122,25 @@ $(window).scroll(function () {
 
 
 
-
-// --- Закрытие списка при скролле 
-// $(window).scroll(function () {
-//     var box1 = $('.header').offset().top;
-//     /*Если сделали скролл на 100px задаём новый класс для header*/
-//     if (box1 > 100) {
-//         $('.simple-select').removeClass('open');
-//     }
-// });
-// --- Закрытие списка при скролле 
-$(window).scroll(function () {
-    $('.simple-select').removeClass('open');
-    $('.search').removeClass('active');
+// --- Slider Top
+const swiperTop = new Swiper('.top__inner', {
+    loop: true,
+    effect: "fade",
+    fadeEffect: {
+        crossFade: true
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + '0' + (index + 1) + "</span>";
+        },
+    },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
 });
-
-
-
-
-
 
 
 
@@ -135,6 +168,8 @@ $(".cart__counter--minus").click(function () {
     }
 });
 
+
+// --- Удаление элемента в корзине
 $('.cart__product-btn').click(function () {
     $(this).parents('.cart__product').remove();
 
@@ -146,11 +181,7 @@ $('.cart__product-btn').click(function () {
 
 
 
-
-
-
-
-// --- Проверка валидации 
+// --- Проверка валидации формы Subscribe
 $(document).ready(function () {
     $('#subscribe__form').submit(function (e) {
         e.preventDefault();
@@ -188,29 +219,14 @@ $(document).ready(function () {
 
 
 
-var animateButton = function (e) {
-
-    e.preventDefault;
-    //reset animation
-    e.target.classList.remove('animate');
-
-    e.target.classList.add('animate');
-    setTimeout(function () {
-        e.target.classList.remove('animate');
-    }, 700);
-};
-
-var bubblyButtons = document.getElementsByClassName("heart");
-
-for (var i = 0; i < bubblyButtons.length; i++) {
-    bubblyButtons[i].addEventListener('click', animateButton, false);
-}
-
-
+// --- Анимация при крлике на кнопку-сердце
 $('.products__add-heart').click(function () {
     $(this).toggleClass('active');
 });
-
+// --- Анимация при крлике на кнопку-корзина
+$('.products__add-cart, .btn__add').click(function () {
+    $(this).toggleClass('btn_like');
+});
 
 
 
@@ -230,9 +246,7 @@ wow.init();
 
 
 
-
-
-// --- Проверка валидации 
+// --- Проверка валидации формы Comment
 $(document).ready(function () {
     $('#comment__form').submit(function (e) {
         e.preventDefault();
@@ -295,16 +309,6 @@ $(document).ready(function () {
             }
         }
     });
-});
-
-
-$('.products__add-cart, .btn__add').click(function () {
-    $(this).toggleClass('btn_like');
-});
-
-
-$('.products__add-cart, .products__add-heart').click(function (e) {
-    e.preventDefault();
 });
 
 
@@ -376,7 +380,7 @@ $(document).ready(function () {
 
 
 
-
+// --- Бегущая строка Companies
 $(function () {
     $('.companies__inner').marquee({
         duration: 30000,
@@ -386,67 +390,6 @@ $(function () {
 });
 
 
-
-var swiperThing2 = new Swiper(".thing__slider2", {
-    spaceBetween: 15,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-    navigation: {
-        nextEl: ".next",
-        prevEl: ".prev",
-    },
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-    },
-});
-var swiperThing = new Swiper(".thing__slider", {
-    spaceBetween: 30,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-    },
-    thumbs: {
-        swiper: swiperThing2,
-    },
-});
-
-
-
-
-$('.thing__sizes-item').click(function () {
-    $(this).toggleClass('active');
-});
-
-
-$('.search').click(function () {
-    $(this).addClass('active');
-});
-// Убираем модальное окно при клике на другую область
-$(document).mouseup(function (e) { // событие клика по веб-документу
-    var div = $('.search'); // тут указываем класс элемента
-    if (!div.is(e.target) // если клик был не по нашему блоку
-        && div.has(e.target).length === 0) { // и не по его дочерним элементам
-        $('.search').removeClass('active');
-    }
-});
-
-$('.search svg').click(function () {
-    if ($('.search').hasClass('active')) {
-        location.href = 'search.html';
-    }
-});
-
-$('.search input').keydown(function (e) {
-    if (e.keyCode === 13) {
-        location.href = 'search.html';
-    }
-});
 
 
 
@@ -462,10 +405,6 @@ $.fn.setCursorPosition = function (pos) {
         range.select();
     }
 };
-// $('#card__input-numeral').click(function () {
-//     $(this).setCursorPosition(0);
-// }).mask("9999 9999 9999 9999", { "placeholder": "" });
-// $('#card__input-numeral').mask("9999 9999 9999 9999", { "placeholder": "" });
 $('#card__input-numeral').click(function () {
     $(this).setCursorPosition(0);
 }).mask("9999 9999 9999 9999");
@@ -483,7 +422,7 @@ $('#card__input-date').mask("99/99");
 
 
 
-// --- Проверка валидации 
+// --- Проверка валидации формы Card
 $(document).ready(function () {
     $('#card__form').submit(function (e) {
         e.preventDefault();
@@ -546,35 +485,13 @@ $(document).ready(function () {
 });
 
 
-
-const swiperTop = new Swiper('.top__inner', {
-    loop: true,
-    effect: "fade",
-    fadeEffect: {
-        crossFade: true
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + '0' +(index + 1) + "</span>";
-        },
-    },
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-});
-
-
-
+// --- Переключить grid у shop
 $('.shop__header-btn1').click(function () {
     $('.shop__header-btn').removeClass('active');
     $(this).toggleClass('active');
     $('.shop__products').removeClass('grid2');
     $('.shop__products').addClass('grid1');
 });
-
 $('.shop__header-btn2').click(function () {
     $('.shop__header-btn').removeClass('active');
     $(this).toggleClass('active');
@@ -584,14 +501,22 @@ $('.shop__header-btn2').click(function () {
 
 
 
+// --- АКтивация Color
 $('.shop__color-item').click(function () {
     $(this).toggleClass('active');
 });
-
+// --- АКтивация checkbox
+$('.checkbox label').click(function () {
+    $(this).parent().find('.custom-checkbox').toggleClass('checked');
+})
+// --- Скрывем Categories
 $('.shop__categories-title').click(function () {
     $(this).parent().toggleClass('hide');
 });
 
+
+
+// --- Открываем sidebar
 $('.filters__btn').click(function () {
     $(this).toggleClass('active');
     $('.shop__sidebar').toggleClass('show');
@@ -605,20 +530,6 @@ $(document).mouseup(function (e) { // событие клика по веб-до
     }
 });
 
-
-
-// $('.checkbox label').click(function() {
-//     let el = $(this).parent().find('.custom-checkbox');
-//     if (el.attr('checked')) {
-//         el.removeAttr('checked');
-//     } else {
-//         el.attr('checked', 'checked');
-//     }
-// });
-
-$('.checkbox label').click(function () {
-    $(this).parent().find('.custom-checkbox').toggleClass('checked');
-})
 
 
 // --- Диапазон цен
@@ -648,8 +559,6 @@ $('.shop__sidebar-inner').click(function () {
         $(".shop__filters-apply").removeClass('disabled');
     }
 });
-
-
 $('#slider-range').click(function () {
     if ($('#amount').val() != '$0 - $300') {
         $(".shop__filters-clear").removeClass('disabled');
@@ -657,11 +566,177 @@ $('#slider-range').click(function () {
     }
 });
 
+
+// --- Reset filters
 $('.shop__filters-clear').click(function () {
     $('.shop__color-item').removeClass('active');
     $('.custom-checkbox').removeClass('checked');
     $('#amount').val('$0 - $300');
     $("#slider-range").slider("option", "values", [0, 300]);
+});
+
+
+
+// --- Custom Cursor
+var cursor = {
+    delay: 8,
+    _x: 0,
+    _y: 0,
+    endX: (window.innerWidth / 2),
+    endY: (window.innerHeight / 2),
+    cursorVisible: true,
+    cursorEnlarged: false,
+    $outline: document.querySelector('.cursor-dot-outline'),
+
+    init: function () {
+        // Set up element sizes
+        this.outlineSize = this.$outline.offsetWidth;
+
+        this.setupEventListeners();
+        this.animateDotOutline();
+    },
+
+    setupEventListeners: function () {
+        var self = this;
+
+        // Anchor hovering
+        document.querySelectorAll('a, .simple-select, .accordion__item-header, button, .search, .prev, .next, .swiper-pagination-bullet, input').forEach(function (el) {
+            el.addEventListener('mouseover', function () {
+                self.cursorEnlarged = true;
+                // self.toggleCursorSize();
+                $('.cursor-dot-outline').css('background-color', 'transparent');
+            });
+            el.addEventListener('mouseout', function () {
+                self.cursorEnlarged = false;
+                // self.toggleCursorSize();
+                $('.cursor-dot-outline').css('background-color', 'rgba(28,28,28,.5)');
+            });
+        });
+
+        // Click events
+        document.addEventListener('mousedown', function () {
+            self.cursorEnlarged = true;
+            self.toggleCursorSize();
+        });
+        document.addEventListener('mouseup', function () {
+            self.cursorEnlarged = false;
+            self.toggleCursorSize();
+        });
+
+
+        document.addEventListener('mousemove', function (e) {
+            // Show the cursor
+            self.cursorVisible = true;
+            self.toggleCursorVisibility();
+
+            // Position the dot
+            self.endX = e.pageX;
+            self.endY = e.pageY;
+        });
+
+        // Hide/show cursor
+        document.addEventListener('mouseenter', function (e) {
+            self.cursorVisible = true;
+            self.toggleCursorVisibility();
+            self.$outline.style.opacity = 1;
+        });
+
+        document.addEventListener('mouseleave', function (e) {
+            self.cursorVisible = true;
+            self.toggleCursorVisibility();
+            self.$outline.style.opacity = 0;
+        });
+    },
+
+    animateDotOutline: function () {
+        var self = this;
+
+        self._x += (self.endX - self._x) / self.delay;
+        self._y += (self.endY - self._y) / self.delay;
+        self.$outline.style.top = self._y + 'px';
+        self.$outline.style.left = self._x + 'px';
+
+        requestAnimationFrame(this.animateDotOutline.bind(self));
+    },
+
+    toggleCursorSize: function () {
+        var self = this;
+
+        if (self.cursorEnlarged) {
+            self.$outline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        } else {
+            self.$outline.style.transform = 'translate(-50%, -50%) scale(1)';
+        }
+    },
+
+    toggleCursorVisibility: function () {
+        var self = this;
+
+        if (self.cursorVisible) {
+            self.$outline.style.opacity = 1;
+        } else {
+            self.$outline.style.opacity = 0;
+        }
+    },
+
+}
+cursor.init();
+
+
+
+// --- Проверка геолокации и автоматическое определение языка страницы
+$.ajax({
+    url: "https://get.geojs.io/v1/ip/geo.js",
+    dataType: "jsonp",
+    jsonpCallback: "geoip",
+    success: function (data) {
+        // Коды русскоязычных стран
+        let countries = ["KZ", "UA", "RU", "BY", "UZ", "TM", "GE", "AZ", "MD", "KG"];
+
+        // Изменение атрибутта lang у html
+        if (countries.includes(data.country_code)) {
+            $("html").attr("lang", "ru");
+        } else {
+            $("html").attr("lang", "en");
+        }
+
+        // Перевод страницы в зависимости от атрибута lang
+        var tran = new Translater({
+            lang: `${$("html").attr("lang")}`
+        });
+
+        // Смена активного элемента в списке языков
+        if ($("html").attr("lang") === 'ru') {
+            $(".languages").parent().find('ul li').removeClass('active');
+            $(".languages").parent().find('ul li').first().addClass('active');
+            $(".languages").parent().find('span').html('ru');
+
+            $(".shop__header-filter[lang='en']").parent().css('display', 'none');
+        } else {
+            $(".languages").parent().find('ul li').removeClass('active');
+            $(".languages").parent().find('ul li').last().addClass('active');
+            $(".languages").parent().find('span').html('en');
+
+            $(".shop__header-filter[lang='ru']").parent().css('display', 'none');
+        }
+
+        // Смена языка в атрибутте lang
+        $(".languages").parent().find("a").on("click", function (e) {
+            e.preventDefault();
+            $("html").attr("lang", $(this).text());
+        });
+        // Смена языка в списке
+        $(".languages").parent().find('ul li a').first().click(function () {
+            tran.setLang('default');
+            $(".shop__header-filter[lang='ru']").parent().css('display', 'block');
+            $(".shop__header-filter[lang='en']").parent().css('display', 'none');
+        });
+        $(".languages").parent().find('ul li a').last().click(function () {
+            tran.setLang('en');
+            $(".shop__header-filter[lang='ru']").parent().css('display', 'none');
+            $(".shop__header-filter[lang='en']").parent().css('display', 'block');
+        });
+    }
 });
 
 

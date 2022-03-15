@@ -2308,7 +2308,7 @@
             padding: 7px 10px;
         }
     }
-    .simple-select:nth-child(1) {
+    .simple-select:not(:last-child) {
         margin-right: 15px;
         ul {
             width: 125px;
@@ -2418,11 +2418,6 @@
     }
     .pagination {
         margin-top: 55px;
-    }
-}
-html[lang="en"] .shop .simple-select {
-    ul {
-        width: 100%;
     }
 }
 
