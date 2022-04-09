@@ -1,11 +1,11 @@
-// --------- Varies ----------
+// ---- Varies ----
 $font: "Bellota";
 $black: #1c1c1c;
 $gold: #a99260;
 $gray: #787878;
 $white: rgba(255, 255, 255, 0.75);
 
-// ------- Global-Tags --------
+// ---- Global-Tags ----
 html {
     box-sizing: border-box;
     overflow-x: hidden;
@@ -27,6 +27,12 @@ body {
     font-size: 18px;
     line-height: 23px;
     color: $black;
+    &.error404-page {
+        background-color: #fff;
+        ::selection {
+            background: rgba(#000, 0.3) !important;
+        }
+    }
 }
 a {
     text-decoration: none;
@@ -58,7 +64,7 @@ section {
     position: relative;
 }
 
-// ----------- Global-Class -------------
+// ---- Global-Class -----
 .container {
     max-width: 1170px;
     margin: 0 auto;
@@ -397,6 +403,35 @@ section {
     }
 }
 
+// Preloader 
+.loaded {
+    .preloader .preloader__block {
+        animation: preloader__block 0.5s both;
+        pointer-events: none;
+        @keyframes preloader__block {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+    .preloader {
+        animation: preloader 1s both;
+        animation-delay: 0.5s;
+    }
+    @keyframes preloader {
+        0% {
+            transform: translateY(0%);
+        }
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+}
+
+// Cursor 
 .cursor-dot-outline {
     z-index: 1000;
     pointer-events: none;
@@ -419,7 +454,7 @@ html[lang="en"] [lang="ru"] {
     display: none;
 }
 
-// --------- ScrollBar ----------
+// ScrollBar
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -430,7 +465,7 @@ html[lang="en"] [lang="ru"] {
     background-color: #1c1c1c;
 }
 
-// --------- Select-Text ----------
+// Select-Text
 ::selection {
     background: rgba($gold, 0.65);
 }

@@ -600,7 +600,7 @@ var cursor = {
         var self = this;
 
         // Anchor hovering
-        document.querySelectorAll('a, .simple-select, .accordion__item-header, button, .search, .prev, .next, .swiper-pagination-bullet, input').forEach(function (el) {
+        document.querySelectorAll('a, .simple-select, .accordion__item-header, button, .search, .prev, .next, .swiper-pagination-bullet, input, .shop__color-item, .checkbox, #slider-range').forEach(function (el) {
             el.addEventListener('mouseover', function () {
                 self.cursorEnlarged = true;
                 // self.toggleCursorSize();
@@ -720,10 +720,78 @@ $.ajax({
             $(".shop__header-filter[lang='ru']").parent().css('display', 'none');
         }
 
+        // Смена Title
+        function changeTitle() {
+            var url = window.location.href;
+            var page1 = new RegExp("/");
+            var page2 = new RegExp("/about.html");
+            var page3 = new RegExp("/blog.html");
+            var page4 = new RegExp("/cart.html");
+            var page5 = new RegExp("/contacts.html");
+            var page6 = new RegExp("/search.html");
+            var page7 = new RegExp("/shop.html");
+            var page8 = new RegExp("/single-post.html");
+
+            console.log(page1.test(url) && $("html").attr("lang") === 'ru')
+            if (page1.test(url) && $("html").attr("lang") === 'ru') {
+                $("title").html("Проект 2 | Главная");
+            }
+            else if (page1.test(url) && $("html").attr("lang") === 'en') {
+                $("title").html("Project 2 | Home");
+            }
+            else if (page2.test(url) && $("html").attr("lang") === 'ru') {
+                $("title").html("Проект 2 | О нас");
+            }
+            else if (page2.test(url) && $("html").attr("lang") === 'en') {
+                $("title").html("Project 2 | About");
+            }
+            else if (page3.test(url) && $("html").attr("lang") === 'ru') {
+                $("title").html("Проект 2 | Блог");
+            }
+            else if (page3.test(url) && $("html").attr("lang") === 'en') {
+                $("title").html("Project 2 | Blog");
+            }
+            else if (page4.test(url) && $("html").attr("lang") === 'ru') {
+                $("title").html("Проект 2 | Корзина");
+            }
+            else if (page4.test(url) && $("html").attr("lang") === 'en') {
+                $("title").html("Project 2 | Cart");
+            }
+            else if (page5.test(url) && $("html").attr("lang") === 'ru') {
+                $("title").html("Проект 2 | Контакты");
+            }
+            else if (page5.test(url) && $("html").attr("lang") === 'en') {
+                $("title").html("Project 2 | Contacts");
+            }
+            else if (page6.test(url) && $("html").attr("lang") === 'ru') {
+                $("title").html("Проект 2 | Поиск");
+            }
+            else if (page6.test(url) && $("html").attr("lang") === 'en') {
+                $("title").html("Project 2 | Search");
+            }
+            else if (page7.test(url) && $("html").attr("lang") === 'ru') {
+                $("title").html("Проект 2 | Магазин");
+            }
+            else if (page7.test(url) && $("html").attr("lang") === 'en') {
+                $("title").html("Project 2 | Shop");
+            }
+            else if (page8.test(url) && $("html").attr("lang") === 'ru') {
+                $("title").html("Проект 2 | Проект-2 | Пост | Модные тренды осени 2021");
+            }
+            else if (page8.test(url) && $("html").attr("lang") === 'en') {
+                $("title").html("Project 2 | Project-2 | Post | Fall 2021 Fashion Trends");
+            }
+            else {
+                $("title").html("404");
+            }
+        }
+
         // Смена языка в атрибутте lang
         $(".languages").parent().find("a").on("click", function (e) {
             e.preventDefault();
             $("html").attr("lang", $(this).text());
+
+            changeTitle();
         });
         // Смена языка в списке
         $(".languages").parent().find('ul li a').first().click(function () {
@@ -736,6 +804,8 @@ $.ajax({
             $(".shop__header-filter[lang='ru']").parent().css('display', 'none');
             $(".shop__header-filter[lang='en']").parent().css('display', 'block');
         });
+
+        changeTitle();
     }
 });
 
