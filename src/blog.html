@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="loaded-hiding">
 
-@@include('./blocks/main/_head.html', {
-"title": "Проект-2 | Блог",
-"title-en": "Project-2 | Blog",
-})
+@@include('./blocks/main/_head.html')
 
 <body>
+
+    @@include('./blocks/main/_top-body.html')
+
 
     @@include('./blocks/main/_header.html', {
     "class": "header-black",
@@ -17,8 +17,6 @@
     "blog": "active",
     "contacts": "",
     })
-
-    <div class="cursor-dot-outline"></div>
 
 
     @@include('./blocks/_info-nav.html', {

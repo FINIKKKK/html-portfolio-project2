@@ -12,6 +12,9 @@ html {
     &.hidden {
         overflow-y: hidden;
     }
+    &.loaded-hiding {
+        overflow-y: hidden;
+    }
 }
 *,
 *::before,

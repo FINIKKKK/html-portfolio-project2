@@ -123,24 +123,26 @@ $(window).scroll(function () {
 
 
 // --- Slider Top
-const swiperTop = new Swiper('.top__inner', {
-    loop: true,
-    effect: "fade",
-    fadeEffect: {
-        crossFade: true
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + '0' + (index + 1) + "</span>";
+setTimeout(function () {
+    const swiperTop = new Swiper('.top__inner', {
+        loop: true,
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true
         },
-    },
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-});
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + '0' + (index + 1) + "</span>";
+            },
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    });
+}, 1400)
 
 
 
@@ -733,13 +735,8 @@ $.ajax({
             var page8 = new RegExp("/single-post.html");
 
             console.log(page1.test(url) && $("html").attr("lang") === 'ru')
-            if (page1.test(url) && $("html").attr("lang") === 'ru') {
-                $("title").html("Проект 2 | Главная");
-            }
-            else if (page1.test(url) && $("html").attr("lang") === 'en') {
-                $("title").html("Project 2 | Home");
-            }
-            else if (page2.test(url) && $("html").attr("lang") === 'ru') {
+            
+            if (page2.test(url) && $("html").attr("lang") === 'ru') {
                 $("title").html("Проект 2 | О нас");
             }
             else if (page2.test(url) && $("html").attr("lang") === 'en') {
@@ -780,6 +777,12 @@ $.ajax({
             }
             else if (page8.test(url) && $("html").attr("lang") === 'en') {
                 $("title").html("Project 2 | Project-2 | Post | Fall 2021 Fashion Trends");
+            }
+            else if (page1.test(url) && $("html").attr("lang") === 'ru') {
+                $("title").html("Проект 2 | Главная");
+            }
+            else if (page1.test(url) && $("html").attr("lang") === 'en') {
+                $("title").html("Project 2 | Home");
             }
             else {
                 $("title").html("404");
